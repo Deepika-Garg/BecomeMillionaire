@@ -14,9 +14,7 @@
   }
    #left{
     justify-content: center;
-    border-right: white solid 1px;
-    
-  } */
+  } 
   /* .right{
     justify-content: center;
     
@@ -26,7 +24,7 @@
   } 
   .question p{
     color: white;
-        font-size: 35px;
+        font-size: 33px;
         width: 100%;
         text-align: center;
         border: 4px solid white;
@@ -49,6 +47,13 @@
     background-color: white;
     cursor: pointer;
     color: var(--col1);
+}
+
+.lifelinein:hover {
+  box-shadow: 0px 0px 10px 5px white;
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
 
