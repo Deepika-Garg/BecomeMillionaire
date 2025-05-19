@@ -392,7 +392,7 @@ const questionSets = {
     11: q11set,
     12: q12set,
   };
-let currentQuestion = 1;
+let currentQuestion = 3;
 let score = 0;
 
 const question = document.querySelector(".question div p");
@@ -404,26 +404,56 @@ function setQueAndAns(queSet) {
   let random = Math.floor(Math.random() * queSet.length);
   let randomquestion = queSet[random];
   question.textContent = randomquestion.question;
-  allAnswers.innerHTML=`<div class="row">
+//   allAnswers.innerHTML=`<div class="row">
+//                 <div class="col-12 col-md-6 mb-2">
+//                   <button type="button" class="btn w-100
+//                    onclick="selectOption('${randomquestion.a}','${randomquestion.correct}')">
+//                    <span>A. </span>${randomquestion.a}</button>
+//                 </div>
+//                 <div class="col-12 col-md-6 mb-2">
+//                   <button type="button" class="btn w-100" 
+//                    onclick="selectOption('${randomquestion.b}','${randomquestion.correct}')">
+//                    <span>B. </span>${randomquestion.b}</button>
+//                 </div>
+//               </div>
+//               <div class="row ">
+//                 <div class="col-12 col-md-6 mb-2">
+//                   <button type="button" class="btn w-100"  
+//                   onclick="selectOption('${randomquestion.c}','${randomquestion.correct}')">
+//                   <span>C. </span>${randomquestion.c}</button>
+//                 </div>
+//                 <div class="col-12 col-md-6 mb-2">
+//                   <button type="button" class="btn w-100" 
+//                    onclick="selectOption('${randomquestion.d}','${randomquestion.correct}')">
+//                    <span>D. </span>${randomquestion.d}</button>
+//                 </div>
+//               </div>`
+
+allAnswers.innerHTML=`<div class="row">
                 <div class="col-12 col-md-6 mb-2">
-                  <button type="button" class="btn w-100"><span>A. </span>${randomquestion.a}</button>
+                  <button type="button" class="btn w-100" data-answer="${randomquestion.a}">
+                   <span>A. </span>${randomquestion.a}</button>
                 </div>
                 <div class="col-12 col-md-6 mb-2">
-                  <button type="button" class="btn w-100"><span>B. </span>${randomquestion.b}</button>
+                  <button type="button" class="btn w-100" 
+                   data-answer="${randomquestion.b}">
+                   <span>B. </span>${randomquestion.b}</button>
                 </div>
               </div>
               <div class="row ">
                 <div class="col-12 col-md-6 mb-2">
-                  <button type="button" class="btn w-100"><span>C. </span>${randomquestion.c}</button>
+                  <button type="button" class="btn w-100"  
+                  data-answer="${randomquestion.c}">
+                  <span>C. </span>${randomquestion.c}</button>
                 </div>
                 <div class="col-12 col-md-6 mb-2">
-                  <button type="button" class="btn w-100"><span>D. </span>${randomquestion.d}</button>
+                  <button type="button" class="btn w-100" 
+                   data-answer="${randomquestion.d}">
+                   <span>D. </span>${randomquestion.d}</button>
                 </div>
               </div>`
 
 }
-
-
 const showQueAndAns = (currentQuestion) => {
   
       setQueAndAns(questionSets[currentQuestion]);
@@ -431,3 +461,50 @@ const showQueAndAns = (currentQuestion) => {
 };
 showQueAndAns(currentQuestion);
 
+ // Add click handlers to each answer button
+ const buttons = allAnswers.querySelectorAll("button");
+ buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedAnswer = button.dataset.answer;
+  
+      // Safety check
+      if (!selectedAnswer) {
+        alert("No answer selected.");
+        return;
+      }
+  
+      // Disable all buttons immediately
+      buttons.forEach((btn) => btn.disabled = true);
+  
+      if (selectedAnswer === randomquestion.correct) {
+        button.classList.add("correct");
+        score = progressSet[currentQuestion - 1].prize;
+  
+        setTimeout(() => {
+          currentQuestion++;
+          if (currentQuestion <= 12) {
+            showQueAndAns(currentQuestion);
+          } else {
+            alert("Congratulations! You've won £1 Million!");
+          }
+        }, 1000); // 1 second delay to show feedback
+      } else {
+        button.classList.add("wrong");
+  
+        // Highlight the correct answer
+        buttons.forEach((btn) => {
+          if (btn.dataset.answer === randomquestion.correct) {
+            btn.classList.add("correct");
+          }
+        });
+  
+        setTimeout(() => {
+          alert("Wrong answer. Game Over.");
+          currentQuestion = 1;
+          score = 0;
+          showQueAndAns(currentQuestion);
+        }, 1500);
+      }
+    });
+  });
+  
