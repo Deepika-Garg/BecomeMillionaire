@@ -330,7 +330,7 @@ const q12set = [
 const progressSet = [
   {
     id: 1,
-    prize: 100,
+    prize: 0,
   },
   {
     id: 2,
@@ -378,6 +378,29 @@ const progressSet = [
   },
 ];
 
+const ladderEl = document.getElementById("ladder");
+
+// Render the ladder
+function renderLadder(currentId = 1) {
+  ladderEl.innerHTML = "";
+
+  // Reverse so highest prize is at top
+  [...progressSet].reverse().forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = `£${item.prize.toLocaleString()}`;
+
+    if (item.id === currentId) {
+      li.classList.add("active");
+    } else if (item.id < currentId) {
+      li.classList.add("passed");
+    }
+
+    ladderEl.appendChild(li);
+  });
+}
+
+
+
 const questionSets = {
     1: q1set,
     2: q2set,
@@ -392,7 +415,7 @@ const questionSets = {
     11: q11set,
     12: q12set,
   };
-let currentQuestion = 12;
+let currentQuestion = 1;
 let score = 0;
 
 const question = document.querySelector(".question div p");
@@ -506,6 +529,8 @@ const showQueAndAns = (currentQuestion) => {
   
 };
 showQueAndAns(currentQuestion);
+renderLadder(currentQuestion);
+
 
 
   
