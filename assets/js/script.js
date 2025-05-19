@@ -392,76 +392,68 @@ const questionSets = {
     11: q11set,
     12: q12set,
   };
-let currentQuestion = 3;
+let currentQuestion = 12;
 let score = 0;
 
 const question = document.querySelector(".question div p");
 const allAnswers = document.querySelector(".answer");
+let currentRandomQuestion = null;
 
 //set random question and their answer from the given set to show on screen
 function setQueAndAns(queSet) {
    
   let random = Math.floor(Math.random() * queSet.length);
-  let randomquestion = queSet[random];
-  question.textContent = randomquestion.question;
+  let currentRandomQuestion = queSet[random];
+  question.textContent = currentRandomQuestion.question;
 //   allAnswers.innerHTML=`<div class="row">
 //                 <div class="col-12 col-md-6 mb-2">
 //                   <button type="button" class="btn w-100
-//                    onclick="selectOption('${randomquestion.a}','${randomquestion.correct}')">
-//                    <span>A. </span>${randomquestion.a}</button>
+//                    onclick="selectOption('${currentRandomQuestion.a}','${currentRandomQuestion.correct}')">
+//                    <span>A. </span>${currentRandomQuestion.a}</button>
 //                 </div>
 //                 <div class="col-12 col-md-6 mb-2">
 //                   <button type="button" class="btn w-100" 
-//                    onclick="selectOption('${randomquestion.b}','${randomquestion.correct}')">
-//                    <span>B. </span>${randomquestion.b}</button>
+//                    onclick="selectOption('${currentRandomQuestion.b}','${currentRandomQuestion.correct}')">
+//                    <span>B. </span>${currentRandomQuestion.b}</button>
 //                 </div>
 //               </div>
 //               <div class="row ">
 //                 <div class="col-12 col-md-6 mb-2">
 //                   <button type="button" class="btn w-100"  
-//                   onclick="selectOption('${randomquestion.c}','${randomquestion.correct}')">
-//                   <span>C. </span>${randomquestion.c}</button>
+//                   onclick="selectOption('${currentRandomQuestion.c}','${currentRandomQuestion.correct}')">
+//                   <span>C. </span>${currentRandomQuestion.c}</button>
 //                 </div>
 //                 <div class="col-12 col-md-6 mb-2">
 //                   <button type="button" class="btn w-100" 
-//                    onclick="selectOption('${randomquestion.d}','${randomquestion.correct}')">
-//                    <span>D. </span>${randomquestion.d}</button>
+//                    onclick="selectOption('${currentRandomQuestion.d}','${currentRandomQuestion.correct}')">
+//                    <span>D. </span>${currentRandomQuestion.d}</button>
 //                 </div>
 //               </div>`
 
 allAnswers.innerHTML=`<div class="row">
                 <div class="col-12 col-md-6 mb-2">
-                  <button type="button" class="btn w-100" data-answer="${randomquestion.a}">
-                   <span>A. </span>${randomquestion.a}</button>
+                  <button type="button" class="btn w-100" data-answer="${currentRandomQuestion.a}">
+                   <span>A. </span>${currentRandomQuestion.a}</button>
                 </div>
                 <div class="col-12 col-md-6 mb-2">
                   <button type="button" class="btn w-100" 
-                   data-answer="${randomquestion.b}">
-                   <span>B. </span>${randomquestion.b}</button>
+                   data-answer="${currentRandomQuestion.b}">
+                   <span>B. </span>${currentRandomQuestion.b}</button>
                 </div>
               </div>
               <div class="row ">
                 <div class="col-12 col-md-6 mb-2">
                   <button type="button" class="btn w-100"  
-                  data-answer="${randomquestion.c}">
-                  <span>C. </span>${randomquestion.c}</button>
+                  data-answer="${currentRandomQuestion.c}">
+                  <span>C. </span>${currentRandomQuestion.c}</button>
                 </div>
                 <div class="col-12 col-md-6 mb-2">
                   <button type="button" class="btn w-100" 
-                   data-answer="${randomquestion.d}">
-                   <span>D. </span>${randomquestion.d}</button>
+                   data-answer="${currentRandomQuestion.d}">
+                   <span>D. </span>${currentRandomQuestion.d}</button>
                 </div>
               </div>`
-
-}
-const showQueAndAns = (currentQuestion) => {
-  
-      setQueAndAns(questionSets[currentQuestion]);
-  
-};
-showQueAndAns(currentQuestion);
-
- // Add click handlers to each answer button
+// Add click handlers to each answer button
  const buttons = allAnswers.querySelectorAll("button");
  buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -476,7 +468,7 @@ showQueAndAns(currentQuestion);
       // Disable all buttons immediately
       buttons.forEach((btn) => btn.disabled = true);
   
-      if (selectedAnswer === randomquestion.correct) {
+      if (selectedAnswer === currentRandomQuestion.correct) {
         button.classList.add("correct");
         score = progressSet[currentQuestion - 1].prize;
   
@@ -493,7 +485,7 @@ showQueAndAns(currentQuestion);
   
         // Highlight the correct answer
         buttons.forEach((btn) => {
-          if (btn.dataset.answer === randomquestion.correct) {
+          if (btn.dataset.answer === currentRandomQuestion.correct) {
             btn.classList.add("correct");
           }
         });
@@ -507,4 +499,13 @@ showQueAndAns(currentQuestion);
       }
     });
   });
+}
+const showQueAndAns = (currentQuestion) => {
+  
+      setQueAndAns(questionSets[currentQuestion]);
+  
+};
+showQueAndAns(currentQuestion);
+
+
   
