@@ -323,6 +323,9 @@ const q12set = [
     question: "What is the largest hot desert in the world?",
     a: "Sahara Desert",
     b: "Mojave Desert",
+     c: "Gobi Desert",
+    d: "Arabian Desert",
+    correct: "Sahara Desert",
   },
 ];
 
@@ -428,30 +431,6 @@ function setQueAndAns(queSet) {
   let random = Math.floor(Math.random() * queSet.length);
   let currentRandomQuestion = queSet[random];
   question.textContent = currentRandomQuestion.question;
-//   allAnswers.innerHTML=`<div class="row">
-//                 <div class="col-12 col-md-6 mb-2">
-//                   <button type="button" class="btn w-100
-//                    onclick="selectOption('${currentRandomQuestion.a}','${currentRandomQuestion.correct}')">
-//                    <span>A. </span>${currentRandomQuestion.a}</button>
-//                 </div>
-//                 <div class="col-12 col-md-6 mb-2">
-//                   <button type="button" class="btn w-100" 
-//                    onclick="selectOption('${currentRandomQuestion.b}','${currentRandomQuestion.correct}')">
-//                    <span>B. </span>${currentRandomQuestion.b}</button>
-//                 </div>
-//               </div>
-//               <div class="row ">
-//                 <div class="col-12 col-md-6 mb-2">
-//                   <button type="button" class="btn w-100"  
-//                   onclick="selectOption('${currentRandomQuestion.c}','${currentRandomQuestion.correct}')">
-//                   <span>C. </span>${currentRandomQuestion.c}</button>
-//                 </div>
-//                 <div class="col-12 col-md-6 mb-2">
-//                   <button type="button" class="btn w-100" 
-//                    onclick="selectOption('${currentRandomQuestion.d}','${currentRandomQuestion.correct}')">
-//                    <span>D. </span>${currentRandomQuestion.d}</button>
-//                 </div>
-//               </div>`
 
 allAnswers.innerHTML=`<div class="row">
                 <div class="col-12 col-md-6 mb-2">
@@ -497,6 +476,7 @@ allAnswers.innerHTML=`<div class="row">
   
         setTimeout(() => {
           currentQuestion++;
+          renderLadder(currentQuestion);
           if (currentQuestion <= 12) {
             showQueAndAns(currentQuestion);
           } else {
@@ -515,8 +495,10 @@ allAnswers.innerHTML=`<div class="row">
   
         setTimeout(() => {
           alert("Wrong answer. Game Over.");
+          alert(`You have won £${score}`);
           currentQuestion = 1;
           score = 0;
+          renderLadder(currentQuestion);
           showQueAndAns(currentQuestion);
         }, 1500);
       }
