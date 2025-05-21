@@ -28,6 +28,7 @@
    .row{
      justify-content:center;
   } 
+ 
   .question p{
     color: white;
         font-size: 20px;
@@ -70,6 +71,19 @@ button:disabled {
   opacity: 0.8;
 }
 
+.imag {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;     /* Always round */
+  object-fit: cover;       /* Keeps image nicely fitted */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 20px white;
+}
+
+/* .imag:hover {
+  box-shadow: 0px 0px 20px #ffd700;
+  transform: scale(1.1);
+} */
 
 .lifelinein:hover {
   box-shadow: 0px 0px 10px 5px white;
@@ -142,7 +156,7 @@ button:disabled {
   background: var(--col1);
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 0 20px #ffd700;
+  box-shadow: 0 0 20px white;
   max-width: 300px;
   min-width: 80px;
 }
