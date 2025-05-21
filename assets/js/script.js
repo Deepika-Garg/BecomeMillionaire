@@ -425,6 +425,10 @@ const question = document.querySelector(".question div p");
 const allAnswers = document.querySelector(".answer");
 let currentRandomQuestion = null;
 
+const correctSound = new Audio('assets/sounds/right_answer.mp4');
+const wrongSound = new Audio('assets/sounds/wrong_answer.mp4');
+const congratsSound = new Audio('sounds/congrats.mp3');
+
 //set random question and their answer from the given set to show on screen
 function setQueAndAns(queSet) {
    
@@ -472,6 +476,7 @@ allAnswers.innerHTML=`<div class="row">
   
       if (selectedAnswer === currentRandomQuestion.correct) {
         button.classList.add("correct");
+        correctSound.play();
         score = progressSet[currentQuestion - 1].prize;
   
         setTimeout(() => {
@@ -485,7 +490,7 @@ allAnswers.innerHTML=`<div class="row">
         }, 1000); // 1 second delay to show feedback
       } else {
         button.classList.add("wrong");
-  
+         wrongSound.play();
         // Highlight the correct answer
         buttons.forEach((btn) => {
           if (btn.dataset.answer === currentRandomQuestion.correct) {
@@ -494,8 +499,10 @@ allAnswers.innerHTML=`<div class="row">
         });
   
         setTimeout(() => {
+         
           alert("Wrong answer. Game Over.");
           alert(`You have won £${score}`);
+
           currentQuestion = 1;
           score = 0;
           renderLadder(currentQuestion);
