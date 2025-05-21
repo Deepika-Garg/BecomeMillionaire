@@ -333,7 +333,7 @@ const q12set = [
 const progressSet = [
   {
     id: 1,
-    prize: 0,
+    prize: 100,
   },
   {
     id: 2,
@@ -427,7 +427,7 @@ let currentRandomQuestion = null;
 
 const correctSound = new Audio('assets/sounds/right_answer.mp4');
 const wrongSound = new Audio('assets/sounds/wrong_answer.mp4');
-const congratsSound = new Audio('sounds/congrats.mp3');
+const congratsSound = new Audio('assets/sounds/right_answer.mp4');
 
 //set random question and their answer from the given set to show on screen
 function setQueAndAns(queSet) {
