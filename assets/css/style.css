@@ -72,8 +72,8 @@ button:disabled {
 }
 
 .imag {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 100%;     /* Always round */
   object-fit: cover;       /* Keeps image nicely fitted */
   transition: all 0.3s ease-in-out;
