@@ -517,7 +517,10 @@ const showQueAndAns = (currentQuestion) => {
 };
 showQueAndAns(currentQuestion);
 renderLadder(currentQuestion);
-
+function goHome() {
+    window.location.href = "index.html"; 
+    
+  }
 
 
   

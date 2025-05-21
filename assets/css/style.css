@@ -50,6 +50,9 @@
     border-radius: 10px;
 
   }
+  .returnBtn{
+    width:fit-content;
+  }
   .btn:hover{
     background-color: white;
     cursor: pointer;
