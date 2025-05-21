@@ -77,7 +77,7 @@ button:disabled {
   border-radius: 100%;     /* Always round */
   object-fit: cover;       /* Keeps image nicely fitted */
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 0px 20px white;
+  box-shadow: 0px 0px 15px white;
 }
 
 /* .imag:hover {
@@ -156,7 +156,7 @@ button:disabled {
   background: var(--col1);
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 15px white;
   max-width: 300px;
   min-width: 80px;
 }

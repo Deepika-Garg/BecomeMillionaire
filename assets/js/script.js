@@ -402,8 +402,6 @@ function renderLadder(currentId = 1) {
   });
 }
 
-
-
 const questionSets = {
     1: q1set,
     2: q2set,
