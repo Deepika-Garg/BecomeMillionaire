@@ -554,7 +554,7 @@ function audiancePoll() {
   const imageAP = document.getElementById("audiancePollImg");
   if (isAPLifeLineUsed) {
     window.alert("Lifeline can be used only once");
-    image50.onclick = null;
+    imageAP.onclick = null;
   } else {
   const buttons = allAnswers.querySelectorAll("button");
   buttons.forEach((btn) => {
