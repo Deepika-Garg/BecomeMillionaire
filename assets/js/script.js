@@ -323,13 +323,13 @@ const q12set = [
     question: "What is the largest hot desert in the world?",
     a: "Sahara Desert",
     b: "Mojave Desert",
-     c: "Gobi Desert",
+    c: "Gobi Desert",
     d: "Arabian Desert",
     correct: "Sahara Desert",
   },
 ];
 
-/*-- Define progressSet array with 12 ids and their corresponding prize values sets --*/ 
+/*-- Define progressSet array with 12 ids and their corresponding prize values sets --*/
 const progressSet = [
   {
     id: 1,
@@ -403,19 +403,19 @@ function renderLadder(currentId = 1) {
 }
 
 const questionSets = {
-    1: q1set,
-    2: q2set,
-    3: q3set,
-    4: q4set,
-    5: q5set,
-    6: q6set,
-    7: q7set,
-    8: q8set,
-    9: q9set,
-    10: q10set,
-    11: q11set,
-    12: q12set,
-  };
+  1: q1set,
+  2: q2set,
+  3: q3set,
+  4: q4set,
+  5: q5set,
+  6: q6set,
+  7: q7set,
+  8: q8set,
+  9: q9set,
+  10: q10set,
+  11: q11set,
+  12: q12set,
+};
 let currentQuestion = 1;
 let score = 0;
 
@@ -423,18 +423,17 @@ const question = document.querySelector(".question div p");
 const allAnswers = document.querySelector(".answer");
 let currentRandomQuestion = null;
 
-const correctSound = new Audio('assets/sounds/right_answer.mp4');
-const wrongSound = new Audio('assets/sounds/wrong_answer.mp4');
-const congratsSound = new Audio('assets/sounds/right_answer.mp4');
+const correctSound = new Audio("assets/sounds/right_answer.mp4");
+const wrongSound = new Audio("assets/sounds/wrong_answer.mp4");
+const congratsSound = new Audio("assets/sounds/right_answer.mp4");
 
 //set random question and their answer from the given set to show on screen
 function setQueAndAns(queSet) {
-   
   let random = Math.floor(Math.random() * queSet.length);
-  let currentRandomQuestion = queSet[random];
+  currentRandomQuestion = queSet[random];
   question.textContent = currentRandomQuestion.question;
 
-allAnswers.innerHTML=`<div class="row">
+  allAnswers.innerHTML = `<div class="row">
                 <div class="col-12 col-md-6 mb-2">
                   <button type="button" class="btn w-100" data-answer="${currentRandomQuestion.a}">
                    <span>A. </span>${currentRandomQuestion.a}</button>
@@ -456,27 +455,27 @@ allAnswers.innerHTML=`<div class="row">
                    data-answer="${currentRandomQuestion.d}">
                    <span>D. </span>${currentRandomQuestion.d}</button>
                 </div>
-              </div>`
-// Add click handlers to each answer button
- const buttons = allAnswers.querySelectorAll("button");
- buttons.forEach((button) => {
+              </div>`;
+  // Add click handlers to each answer button
+  const buttons = allAnswers.querySelectorAll("button");
+  buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const selectedAnswer = button.dataset.answer;
-  
+
       // Safety check
       if (!selectedAnswer) {
         alert("No answer selected.");
         return;
       }
-  
+
       // Disable all buttons immediately
-      buttons.forEach((btn) => btn.disabled = true);
-  
+      buttons.forEach((btn) => (btn.disabled = true));
+
       if (selectedAnswer === currentRandomQuestion.correct) {
         button.classList.add("correct");
         correctSound.play();
         score = progressSet[currentQuestion - 1].prize;
-  
+
         setTimeout(() => {
           currentQuestion++;
           renderLadder(currentQuestion);
@@ -488,16 +487,15 @@ allAnswers.innerHTML=`<div class="row">
         }, 1000); // 1 second delay to show feedback
       } else {
         button.classList.add("wrong");
-         wrongSound.play();
+        wrongSound.play();
         // Highlight the correct answer
         buttons.forEach((btn) => {
           if (btn.dataset.answer === currentRandomQuestion.correct) {
             btn.classList.add("correct");
           }
         });
-  
+
         setTimeout(() => {
-         
           alert("Wrong answer. Game Over.");
           alert(`You have won £${score}`);
 
@@ -511,16 +509,63 @@ allAnswers.innerHTML=`<div class="row">
   });
 }
 const showQueAndAns = (currentQuestion) => {
-  
-      setQueAndAns(questionSets[currentQuestion]);
-  
+  setQueAndAns(questionSets[currentQuestion]);
 };
 showQueAndAns(currentQuestion);
 renderLadder(currentQuestion);
+
+//Fuction to Return back to the home page from 404 Error page
 function goHome() {
-    window.location.href = "index.html"; 
-    
+  window.location.href = "index.html";
+}
+
+
+ //Fuction for 50-50 life line
+let isFiftyLifeLineUsed = false;
+function fiftyFifty() {
+  const image50 = document.getElementById("50-50Img");
+  if (isFiftyLifeLineUsed) {
+    window.alert("Lifeline can be used only once");
+    image50.onclick = null;
+  } else {
+    const buttons = allAnswers.querySelectorAll("button");
+    const correctAnswer = currentRandomQuestion.correct;
+    // Get all wrong buttons
+    const wrongButtons = Array.from(buttons).filter(
+      (btn) => btn.dataset.answer !== correctAnswer
+    );
+    //disabled only 2 wrong buttons for 50-50 functionality
+    for (let i = 0; i < 2; i++) {
+      wrongButtons[i].disabled = true;
+      wrongButtons[i].classList.add("wrong");
+    }
+    //disabling the image after one use
+    image50.style.opacity = 0.5;
+    image50.style.cursor = "not-allowed";
+    isFiftyLifeLineUsed = true;
   }
+}
 
 
-  
+//functionality for audiance poll button/Image
+let isAPLifeLineUsed=false;
+
+function audiancePoll() {
+  const imageAP = document.getElementById("audiancePollImg");
+  if (isAPLifeLineUsed) {
+    window.alert("Lifeline can be used only once");
+    image50.onclick = null;
+  } else {
+  const buttons = allAnswers.querySelectorAll("button");
+  buttons.forEach((btn) => {
+    if (btn.dataset.answer === currentRandomQuestion.correct) {
+      btn.classList.add("correct");
+    }
+  });
+  //disabling the image after one use
+  imageAP.onclick = null;
+  imageAP.style.opacity = 0.5;
+  imageAP.style.cursor = "not-allowed";
+  isAPLifeLineUsed=true;
+}}
+
