@@ -605,3 +605,16 @@ overlay.onclick = function () {
   modal.classList.remove("active");
   overlay.classList.remove("active");
 };
+
+//functionality for toggling sound of all the audio
+let isSoundOn=true;
+const toggleSoundBtn = document.getElementById("toggleSoundBtn");
+const allSounds = [correctSound, wrongSound, congratsSound];
+
+function toggleSound() {
+  isSoundOn = !isSoundOn;
+  allSounds.forEach((sound) => (sound.muted = !isSoundOn));
+  toggleSoundBtn.innerHTML = isSoundOn ? '<i class="fa-solid fa-volume-high"></i>' : '<i class="fa-solid fa-volume-xmark"></i>';
+}
+toggleSoundBtn.addEventListener("click", toggleSound);
+
