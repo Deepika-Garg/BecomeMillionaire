@@ -30,30 +30,31 @@ const q1set = [
 
 const q2set = [
   {
-    question: "What is the largest continent in the world?",
-    a: "Africa",
-    b: "Asia",
-    c: "North America",
-    d: "South America",
-    correct: "Asia",
+    question: "Which planet is known as the Red Planet?",
+    a: "Earth",
+    b: "Jupiter",
+    c: "Mars",
+    d: "Venus",
+    correct: "Mars",
   },
   {
-    question: "What is the smallest continent in the world?",
-    a: "Antarctica",
-    b: "Europe",
-    c: "Australia",
-    d: "South America",
-    correct: "Australia",
+    question: "Which is the longest river in the world?",
+    a: "Amazon River",
+    b: "Yangtze River",
+    c: "Mississippi River",
+    d: "Nile River",
+    correct: "Nile River",
   },
   {
-    question: "What is the only continent that is also a country?",
-    a: "Europe",
-    b: "Africa",
+    question: "Which country is famous for the Great Barrier Reef?",
+    a: "USA",
+    b: "Brazil",
     c: "Australia",
-    d: "North America",
+    d: "India",
     correct: "Australia",
   },
 ];
+
 
 const q3set = [
   {
@@ -143,7 +144,7 @@ const q6set = [
     b: "Arabian Desert",
     c: "Gobi Desert",
     d: "Antarctica",
-    correct: "Antarctica",
+    correct: "Sahara Desert",
   },
   {
     question: "What is the capital of Canada?",
@@ -219,31 +220,28 @@ const q8set = [
 
 const q9set = [
   {
-    question:
-      "What is the name of the ancient Incan city in Peru that is considered one of the new Seven Wonders of the World?",
-    a: "Angkor Wat",
-    b: "Petra",
-    c: "Machu Picchu",
-    d: "The Colosseum",
-    correct: "Machu Picchu",
+    question: "Which scientist developed the theory of general relativity?",
+    a: "Isaac Newton",
+    b: "Albert Einstein",
+    c: "Galileo Galilei",
+    d: "Stephen Hawking",
+    correct: "Albert Einstein",
   },
   {
-    question:
-      "What is the name of the famous tower in Italy that leans to one side?",
-    a: "Eiffel Tower",
-    b: "CN Tower",
-    c: "Leaning Tower of Pisa",
-    d: "Tokyo Tower",
-    correct: "Leaning Tower of Pisa",
+    question: "Which country was the first to land a human on the Moon?",
+    a: "China",
+    b: "Soviet Union",
+    c: "United States",
+    d: "India",
+    correct: "United States",
   },
   {
-    question:
-      "What is the name of the famous monument in the USA that was built to commemorate the first US President?",
-    a: "Mount Rushmore",
-    b: "Lincoln Memorial",
-    c: "Statue of Liberty",
-    d: "Washington Monument",
-    correct: "Washington Monument",
+    question: "Which ancient civilization built the pyramids of Giza?",
+    a: "Romans",
+    b: "Mesopotamians",
+    c: "Aztecs",
+    d: "Egyptians",
+    correct: "Egyptians",
   },
 ];
 
@@ -276,58 +274,59 @@ const q10set = [
 
 const q11set = [
   {
-    question: "What is the largest ocean in the world?",
-    a: "Atlantic Ocean",
-    b: "Arctic Ocean",
-    c: "Indian Ocean",
-    d: "Pacific Ocean",
-    correct: "Pacific Ocean",
+    question: "Which keyword is used to declare a constant in JavaScript?",
+    a: "let",
+    b: "const",
+    c: "var",
+    d: "static",
+    correct: "const",
   },
   {
-    question: "What is the smallest ocean in the world?",
-    a: "Arctic Ocean",
-    b: "Southern Ocean",
-    c: "Indian Ocean",
-    d: "Atlantic Ocean",
-    correct: "Southern Ocean",
+    question: "What is the output of: typeof null?",
+    a: "'object'",
+    b: "'null'",
+    c: "'undefined'",
+    d: "'boolean'",
+    correct: "object",
   },
   {
-    question: "What is the deepest ocean in the world?",
-    a: "Atlantic Ocean",
-    b: "Arctic Ocean",
-    c: "Indian Ocean",
-    d: "Pacific Ocean",
-    correct: "Pacific Ocean",
+    question: "Which method is used to convert a JSON string into an object?",
+    a: "JSON.parse()",
+    b: "JSON.stringify()",
+    c: "parse.JSON()",
+    d: "object.parse()",
+    correct: "JSON.parse()",
   },
 ];
 
+
 const q12set = [
   {
-    question: "What is the largest desert in the world?",
-    a: "Gobi Desert",
-    b: "Sahara Desert",
-    c: "Mojave Desert",
-    d: "Kalahari Desert",
-    correct: "Sahara Desert",
+    question: "Who wrote the play 'Romeo and Juliet'?",
+    a: "William Shakespeare",
+    b: "Charles Dickens",
+    c: "Jane Austen",
+    d: "Leo Tolstoy",
+    correct: "William Shakespeare",
   },
   {
-    question:
-      "What is the only desert in the world that is home to a large number of wild camels?",
-    a: "Mojave Desert",
-    b: "Sahara Desert",
-    c: "Gobi Desert",
-    d: "Arabian Desert",
-    correct: "Gobi Desert",
+    question: "Which element has the chemical symbol 'O'?",
+    a: "Gold",
+    b: "Oxygen",
+    c: "Osmium",
+    d: "Oxide",
+    correct: "Oxygen",
   },
   {
-    question: "What is the largest hot desert in the world?",
-    a: "Sahara Desert",
-    b: "Mojave Desert",
-    c: "Gobi Desert",
-    d: "Arabian Desert",
-    correct: "Sahara Desert",
+    question: "What is the hardest natural substance on Earth?",
+    a: "Gold",
+    b: "Iron",
+    c: "Diamond",
+    d: "Granite",
+    correct: "Diamond",
   },
 ];
+
 
 /*-- Define progressSet array with 12 ids and their corresponding prize values sets --*/
 const progressSet = [
