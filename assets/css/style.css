@@ -286,7 +286,7 @@ button:disabled {
   /* border: 2px solid white;  */
   border-radius: 2px;
   transition: background 0.3s;
-  text-align: justify;
+  text-align:center;
 }
 
 .ladder li.active {
