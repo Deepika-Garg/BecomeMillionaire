@@ -458,6 +458,14 @@ function setQueAndAns(queSet) {
               </div>`;
   // Add click handlers to each answer button
   const buttons = allAnswers.querySelectorAll("button");
+
+   // remove disabled state and any answer-related classes
+  buttons.forEach((btn) => {
+    btn.disabled = false;
+    btn.classList.remove("correct", "wrong");
+  });
+
+
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const selectedAnswer = button.dataset.answer;
@@ -483,6 +491,7 @@ function setQueAndAns(queSet) {
             showQueAndAns(currentQuestion);
           } else {
             alert("Congratulations! You've won £1 Million!");
+            
           }
         }, 1000); // 1 second delay to show feedback
       } else {
@@ -538,6 +547,7 @@ function fiftyFifty() {
     for (let i = 0; i < 2; i++) {
       wrongButtons[i].disabled = true;
       wrongButtons[i].classList.add("wrong");
+      wrongButtons[i].remove();
     }
     //disabling the image after one use
     image50.style.opacity = 0.5;
@@ -569,3 +579,29 @@ function audiancePoll() {
   isAPLifeLineUsed=true;
 }}
 
+
+//functionality for modal
+
+//get elements
+const modal = document.getElementById("modal");
+const openRulesBtn = document.querySelector(".rulesBtn");
+const closeRulesBtn = document.querySelector(".closeButton");
+const overlay = document.getElementById("overlay");
+
+// Show modal
+openRulesBtn.onclick = function () {
+  modal.classList.add("active");
+  overlay.classList.add("active");
+};
+
+// Close modal
+closeRulesBtn.onclick = function () {
+  modal.classList.remove("active");
+  overlay.classList.remove("active");
+};
+
+// Close modal when overlay is clicked
+overlay.onclick = function () {
+  modal.classList.remove("active");
+  overlay.classList.remove("active");
+};

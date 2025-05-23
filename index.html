@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--Favicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
     <!-- Bootstrap 5 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -19,6 +33,8 @@
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    
     <title>Who Wants to Be a Millionaire | Home page</title>
   </head>
   <body>
@@ -29,6 +45,38 @@
           <section>
             <div id="left" class="container-fluid mt-3">
               <div class="row mb-4">
+                <span col-1>
+                  <span>
+                    <!--modal Rules button-->
+                    <button
+                      type=" button"
+                      class="rulesBtn"
+                    >
+                      Rules
+                    </button>
+                  </span>
+                </span>
+                <!--Modal itself-->
+                <div class="modal" id="modal">
+                  <div class="modal-header">
+                    <div class="title">Game Rules</div>
+                    <button  class="closeButton">
+                      &times;
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p><h6>Welcome to the quiz game. This game is inspired from "Who Wants to be a Millionaire" quiz show.</h6> </p>
+                    <p>There are 12 questions in the quiz. For each question 4 answers are given. Click on any answer to select them.
+                       There is progress bar is shown in the right which will show your winning amount. With each right answer your 
+                       winning amount will move up.  </p>
+                      <p>There are life lines called <strong>"50-50"</strong> and <strong>Audiance Poll </strong> are provided to help you with the answers.
+                      You can use lifelines only once. <strong>"50-50"</strong> will remove two incorrect answers and you will have only two options to
+                       select from including the right one. <strong>Audiance Poll </strong> will highlight the right only option. </p>
+                       <p>Once you give the wrong answer you will be out of the game with your winning amount.</p>
+                       <p>All the best to play the game. Hope you win the £1,000,000 and become Millionaire!!</p>
+                  </div>
+                </div>
+                <div active id="overlay"></div>
                 <div class="text-center">
                   <img
                     src="assets/images/KBC.png"
@@ -78,20 +126,21 @@
             <div class="container-fluid mt-3">
               <div class="lifelines row">
                 <div
-                  class="lifeline mb-2  justify-content-center align-items-center"
+                  class="lifeline mb-2 justify-content-center align-items-center"
                 >
-                  <img id="50-50Img"
+                  <img
+                    id="50-50Img"
                     src="assets/images/50-50.webp"
                     class="img-fluid"
                     alt="50-50 image"
-                    
-                    onclick="fiftyFifty()" 
+                    onclick="fiftyFifty()"
                   />
                 </div>
                 <div
                   class="lifeline mb-2 justify-content-center align-items-center"
                 >
-                  <img id="audiancePollImg"
+                  <img
+                    id="audiancePollImg"
                     src="assets/images/AudiancePoll.webp"
                     class="img-fluid"
                     alt="Audience Poll"
@@ -108,9 +157,11 @@
                   />
                 </div> -->
               </div>
-              <div class="container-fluid mt-5 rightProgress ">
-                
-                <ul id="ladder" class="ladder justify-content-center align-items-center">
+              <div class="container-fluid mt-5 rightProgress">
+                <ul
+                  id="ladder"
+                  class="ladder justify-content-center align-items-center"
+                >
                   <!-- Ladder items will be filled dynamically -->
                 </ul>
               </div>
@@ -119,6 +170,7 @@
         </div>
       </div>
     </div>
+    <!--Javascript-->
     <script src="assets/js/script.js"></script>
   </body>
 </html>
