@@ -11,6 +11,9 @@ body {
   background-color: var(--col1);
   color: white;
 }
+body, html {
+  overflow-x: hidden;
+}
 #left {
   justify-content: center;
 }
@@ -21,15 +24,14 @@ body {
 
 .question p {
   color: white;
-  font-size: 18px;
+  font-size: 17px;
   width: 100%;
   text-align: center;
   border: 4px solid white;
   padding: 10px 20px;
   border-radius: 10px;
 }
-.rulesBtn, #toggleSoundBtn, #cancelBtn,#restartBtn{
-  
+.rulesBtn, #toggleSoundBtn, #cancelBtn,#restartBtn {
   font-size: 15px;
   text-align: center;
   border: 1px solid white;
@@ -95,7 +97,8 @@ body {
 }  
 
 .modal-header {
-  position: fixed;
+  position: sticky;
+  top:0;
   padding: 10px, 15px;
   display: flex;
   justify-content: space-between;
@@ -110,7 +113,6 @@ body {
 }
 
 .modal-header .closeButton {
-  position: fixed;
   cursor: pointer;
   border: none;
   outline: none;
@@ -145,7 +147,7 @@ pointer-events: all;
 
 .btn {
   color: white;
-  font-size: 15px;
+  font-size: 14px;
   width: 100%;
   text-align: center;
   border: 4px solid white;
@@ -212,9 +214,9 @@ button:disabled {
   margin: auto;
   background: var(--col1);
   border-radius: 10px;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 0 15px white;
-  max-width: 250px;
+  max-width: 230px;
   min-width: 85px;
 }
 
@@ -225,7 +227,7 @@ button:disabled {
   /* border: 2px solid white;  */
   border-radius: 2px;
   transition: background 0.3s;
-  text-align:center;
+  text-align:left;
 }
 
 .ladder li.active {
