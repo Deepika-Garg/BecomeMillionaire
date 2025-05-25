@@ -55,7 +55,6 @@ const q2set = [
   },
 ];
 
-
 const q3set = [
   {
     question: "What is the largest ocean in the world?",
@@ -299,7 +298,6 @@ const q11set = [
   },
 ];
 
-
 const q12set = [
   {
     question: "Who wrote the play 'Romeo and Juliet'?",
@@ -326,7 +324,6 @@ const q12set = [
     correct: "Diamond",
   },
 ];
-
 
 /*-- Define progressSet array with 12 ids and their corresponding prize values sets --*/
 const progressSet = [
@@ -458,12 +455,11 @@ function setQueAndAns(queSet) {
   // Add click handlers to each answer button
   const buttons = allAnswers.querySelectorAll("button");
 
-   // remove disabled state and any answer-related classes
+  // remove disabled state and any answer-related classes
   buttons.forEach((btn) => {
     btn.disabled = false;
     btn.classList.remove("correct", "wrong");
   });
-
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -490,7 +486,6 @@ function setQueAndAns(queSet) {
             showQueAndAns(currentQuestion);
           } else {
             alert("Congratulations! You've won £1 Million!");
-            
           }
         }, 1000); // 1 second delay to show feedback
       } else {
@@ -507,10 +502,7 @@ function setQueAndAns(queSet) {
           alert("Wrong answer. Game Over.");
           alert(`You have won £${score}`);
 
-          currentQuestion = 1;
-          score = 0;
-          renderLadder(currentQuestion);
-          showQueAndAns(currentQuestion);
+          showResetModal();
         }, 1500);
       }
     });
@@ -527,37 +519,45 @@ function goHome() {
   window.location.href = "index.html";
 }
 
-
- //Fuction for 50-50 life line
+//Function for 50-50 life line
 let isFiftyLifeLineUsed = false;
 function fiftyFifty() {
-  const image50 = document.getElementById("50-50Img");
   if (isFiftyLifeLineUsed) {
-    window.alert("Lifeline can be used only once");
-    image50.onclick = null;
+    lifeLineStatus(true, image50);
+    return;
+  }
+  const buttons = allAnswers.querySelectorAll("button");
+  const correctAnswer = currentRandomQuestion.correct;
+  // Get all wrong buttons
+  const wrongButtons = Array.from(buttons).filter(
+    (btn) => btn.dataset.answer !== correctAnswer
+  );
+  //disabled only 2 wrong buttons for 50-50 functionality
+  for (let i = 0; i < 2; i++) {
+    wrongButtons[i].disabled = true;
+    //wrongButtons[i].classList.add("wrong");
+    wrongButtons[i].remove();
+  }
+  //disabling the image after one use
+ isFiftyLifeLineUsed = true;
+lifeLineStatus(isFiftyLifeLineUsed, image50);
+}
+
+function lifeLineStatus(isLifeLineUsed, lifeLineimage) {
+  if (isLifeLineUsed) {
+    window.alert("LifeLines can be used only Once!");
+    lifeLineimage.style.cursor = "not-allowed";
+    lifeLineimage.style.opacity = 0.5;
+    lifeLineimage.onclick = null;
   } else {
-    const buttons = allAnswers.querySelectorAll("button");
-    const correctAnswer = currentRandomQuestion.correct;
-    // Get all wrong buttons
-    const wrongButtons = Array.from(buttons).filter(
-      (btn) => btn.dataset.answer !== correctAnswer
-    );
-    //disabled only 2 wrong buttons for 50-50 functionality
-    for (let i = 0; i < 2; i++) {
-      wrongButtons[i].disabled = true;
-      wrongButtons[i].classList.add("wrong");
-      wrongButtons[i].remove();
-    }
-    //disabling the image after one use
-    image50.style.opacity = 0.5;
-    image50.style.cursor = "not-allowed";
-    isFiftyLifeLineUsed = true;
+    lifeLineimage.style.cursor = "pointer"; // Makes it look clickable again
+    lifeLineimage.style.opacity = 1; // Full visibility
+    lifeLineimage.onclick = lifeLineFunction; // Reassign the original function
   }
 }
 
-
 //functionality for audiance poll button/Image
-let isAPLifeLineUsed=false;
+let isAPLifeLineUsed = false;
 
 function audiancePoll() {
   const imageAP = document.getElementById("audiancePollImg");
@@ -565,19 +565,19 @@ function audiancePoll() {
     window.alert("Lifeline can be used only once");
     imageAP.onclick = null;
   } else {
-  const buttons = allAnswers.querySelectorAll("button");
-  buttons.forEach((btn) => {
-    if (btn.dataset.answer === currentRandomQuestion.correct) {
-      btn.classList.add("correct");
-    }
-  });
-  //disabling the image after one use
-  imageAP.onclick = null;
-  imageAP.style.opacity = 0.5;
-  imageAP.style.cursor = "not-allowed";
-  isAPLifeLineUsed=true;
-}}
-
+    const buttons = allAnswers.querySelectorAll("button");
+    buttons.forEach((btn) => {
+      if (btn.dataset.answer === currentRandomQuestion.correct) {
+        btn.classList.add("correct");
+      }
+    });
+    //disabling the image after one use
+    imageAP.onclick = null;
+    imageAP.style.opacity = 0.5;
+    imageAP.style.cursor = "not-allowed";
+    isAPLifeLineUsed = true;
+  }
+}
 
 //functionality for modal
 
@@ -606,14 +606,43 @@ overlay.onclick = function () {
 };
 
 //functionality for toggling sound of all the audio
-let isSoundOn=true;
+let isSoundOn = true;
 const toggleSoundBtn = document.getElementById("toggleSoundBtn");
 const allSounds = [correctSound, wrongSound, congratsSound];
 
 function toggleSound() {
   isSoundOn = !isSoundOn;
   allSounds.forEach((sound) => (sound.muted = !isSoundOn));
-  toggleSoundBtn.innerHTML = isSoundOn ? '<i class="fa-solid fa-volume-high"></i>' : '<i class="fa-solid fa-volume-xmark"></i>';
+  toggleSoundBtn.innerHTML = isSoundOn
+    ? '<i class="fa-solid fa-volume-high"></i>'
+    : '<i class="fa-solid fa-volume-xmark"></i>';
 }
 toggleSoundBtn.addEventListener("click", toggleSound);
 
+
+//functionality for reset game modal
+const resetModal = document.getElementById("resetModal");
+const cancelBtn = document.getElementById("cancelBtn");
+const restartBtn = document.getElementById("restartBtn");
+
+// Function to show modal
+function showResetModal() {
+  resetModal.style.display = "flex";
+}
+
+// Cancel button closes modal
+cancelBtn.onclick = () => {
+  resetModal.style.display = "none";
+};
+
+// Start Again button logic
+restartBtn.onclick = () => {
+  resetModal.style.display = "none";
+  // Add your reset logic here
+  currentQuestion = 1;
+  score = 0;
+  renderLadder(currentQuestion);
+  showQueAndAns(currentQuestion);
+  isFiftyLifeLineUsed = false;
+  isAPLifeLineUsed = false;
+};
