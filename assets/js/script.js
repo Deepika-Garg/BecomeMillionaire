@@ -485,7 +485,7 @@ function setQueAndAns(queSet) {
           if (currentQuestion <= 12) {
             showQueAndAns(currentQuestion);
           } else {
-            alert("Congratulations! You've won £1 Million!");
+            //alert("Congratulations! You've won £1 Million!");
             showResetModal();
           }
         }, 1000); // 1 second delay to show feedback
@@ -500,8 +500,8 @@ function setQueAndAns(queSet) {
         });
 
         setTimeout(() => {
-          alert("Wrong answer. Game Over.");
-          alert(`You have won £${score}`);
+          // alert("Wrong answer. Game Over.");
+          // alert(`You have won £${score}`);
           showResetModal();
         }, 1000);
       }
@@ -619,6 +619,8 @@ const restartBtn = document.getElementById("restartBtn");
 
 // Function to show modal
 function showResetModal() {
+  const modalContent= document.getElementById("modalHeader");
+  modalContent.innerHTML=` <h5>Game Over! Congratulations You have won £${score}<h5>`;
   resetModal.style.display = "flex";
 }
 
