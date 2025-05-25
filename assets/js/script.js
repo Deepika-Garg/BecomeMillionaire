@@ -486,6 +486,7 @@ function setQueAndAns(queSet) {
             showQueAndAns(currentQuestion);
           } else {
             alert("Congratulations! You've won £1 Million!");
+            showResetModal();
           }
         }, 1000); // 1 second delay to show feedback
       } else {
@@ -501,9 +502,8 @@ function setQueAndAns(queSet) {
         setTimeout(() => {
           alert("Wrong answer. Game Over.");
           alert(`You have won £${score}`);
-
           showResetModal();
-        }, 1500);
+        }, 1000);
       }
     });
   });
@@ -521,49 +521,37 @@ function goHome() {
 
 //Function for 50-50 life line
 let isFiftyLifeLineUsed = false;
+const image50 = document.getElementById("50-50Img");
 function fiftyFifty() {
   if (isFiftyLifeLineUsed) {
-    lifeLineStatus(true, image50);
-    return;
-  }
-  const buttons = allAnswers.querySelectorAll("button");
-  const correctAnswer = currentRandomQuestion.correct;
-  // Get all wrong buttons
-  const wrongButtons = Array.from(buttons).filter(
-    (btn) => btn.dataset.answer !== correctAnswer
-  );
-  //disabled only 2 wrong buttons for 50-50 functionality
-  for (let i = 0; i < 2; i++) {
-    wrongButtons[i].disabled = true;
-    //wrongButtons[i].classList.add("wrong");
-    wrongButtons[i].remove();
-  }
-  //disabling the image after one use
- isFiftyLifeLineUsed = true;
-lifeLineStatus(isFiftyLifeLineUsed, image50);
-}
-
-function lifeLineStatus(isLifeLineUsed, lifeLineimage) {
-  if (isLifeLineUsed) {
-    window.alert("LifeLines can be used only Once!");
-    lifeLineimage.style.cursor = "not-allowed";
-    lifeLineimage.style.opacity = 0.5;
-    lifeLineimage.onclick = null;
+    window.alert("Lifeline can be used only once");
   } else {
-    lifeLineimage.style.cursor = "pointer"; // Makes it look clickable again
-    lifeLineimage.style.opacity = 1; // Full visibility
-    lifeLineimage.onclick = lifeLineFunction; // Reassign the original function
+    const buttons = allAnswers.querySelectorAll("button");
+    const correctAnswer = currentRandomQuestion.correct;
+    // Get all wrong buttons
+    const wrongButtons = Array.from(buttons).filter(
+      (btn) => btn.dataset.answer !== correctAnswer
+    );
+    //removing only 2 wrong buttons for 50-50 functionality
+    for (let i = 0; i < 2; i++) {
+      wrongButtons[i].disabled = true;
+      //wrongButtons[i].classList.add("wrong");
+      wrongButtons[i].remove();
+    }
+    //disabling the image after one use
+    image50.style.opacity = 0.5;
+    image50.style.cursor = "not-allowed";
+    isFiftyLifeLineUsed = true;
   }
 }
 
 //functionality for audiance poll button/Image
 let isAPLifeLineUsed = false;
-
+ const imageAP = document.getElementById("audiancePollImg");
 function audiancePoll() {
-  const imageAP = document.getElementById("audiancePollImg");
+  
   if (isAPLifeLineUsed) {
     window.alert("Lifeline can be used only once");
-    imageAP.onclick = null;
   } else {
     const buttons = allAnswers.querySelectorAll("button");
     buttons.forEach((btn) => {
@@ -572,12 +560,17 @@ function audiancePoll() {
       }
     });
     //disabling the image after one use
-    imageAP.onclick = null;
     imageAP.style.opacity = 0.5;
     imageAP.style.cursor = "not-allowed";
     isAPLifeLineUsed = true;
   }
 }
+function lifeLineStatusReset(isLifeLineUsed, lifeLineimage) {
+   if(!isLifeLineUsed)
+   {
+     lifeLineimage.style.cursor = "pointer"; // Makes it look clickable again
+     lifeLineimage.style.opacity = 1; // Full visibility
+   }}
 
 //functionality for modal
 
@@ -619,7 +612,6 @@ function toggleSound() {
 }
 toggleSoundBtn.addEventListener("click", toggleSound);
 
-
 //functionality for reset game modal
 const resetModal = document.getElementById("resetModal");
 const cancelBtn = document.getElementById("cancelBtn");
@@ -644,5 +636,7 @@ restartBtn.onclick = () => {
   renderLadder(currentQuestion);
   showQueAndAns(currentQuestion);
   isFiftyLifeLineUsed = false;
+  lifeLineStatusReset(isFiftyLifeLineUsed,image50);
   isAPLifeLineUsed = false;
+  lifeLineStatusReset(isAPLifeLineUsed,imageAP);
 };
