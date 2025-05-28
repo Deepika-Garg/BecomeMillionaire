@@ -44,7 +44,6 @@ html {
   padding: 8px 12px;
   justify-content: space-between;
   border-radius: 10px;
-  z-index: 10px;
   background: var(--col1);
   color: white;
 }
@@ -56,12 +55,13 @@ html {
   background-color: white;
   color: var(--col1);
   border: 1px solid var(--col1);
+  z-index: 10;
 }
 .modal,
 #overlay {
   display: none;
 }
-
+  
 #overlay {
   position: fixed;
   top: 0;
@@ -77,9 +77,8 @@ html {
   left: 40%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0);
-  border: 1px, solid, black;
+  border: 1px solid black;
   border-radius: 10px;
-  box-shadow: 10px;
   z-index: 1000;
   background-color: white;
   color: black;
@@ -98,7 +97,7 @@ html {
 }
 
 .modal-header {
-  padding: 10px, 15px;
+  padding: 10px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,22 +119,9 @@ html {
 }
 
 .modal-body {
-  padding: 10px, 15px;
+  padding: 10px 15px;
 }
-/*
- #overlay{
-  position: fixed;
-  opacity: 0;
-  transition: 200ms ease-in-out;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,.5);
-  pointer-events: none;
-  z-index: 9;
-}
-*/
+
 #overlay.active {
   opacity: 1;
   pointer-events: all;
@@ -143,7 +129,6 @@ html {
 
 .btn {
   color: white;
-  /* font-size: 14px; */
   font-size: 12px;
   width: 100%;
   text-align: center;
@@ -177,8 +162,6 @@ button:disabled {
 }
 
 .imag {
-  /* width: 180px;
-  height: 180px; */
   width: 150px;
   height: 150px;
   border-radius: 100%; /* Always round */
@@ -210,7 +193,6 @@ button:disabled {
 .ladder {
   list-style: none;
   padding: 0;
-  /* margin: auto; */
   margin: 0;
   background: var(--col1);
   border-radius: 10px;
@@ -221,12 +203,11 @@ button:disabled {
 }
 
 .ladder li {
-  /* padding: 8px; */
+ 
   padding: 2px;
   font-size: 14px;
   border-bottom: 1px solid #ccc;
-  border-width: auto;
-  /* border: 2px solid white;  */
+  border-width: 1px;  
   border-radius: 2px;
   transition: background 0.3s;
   text-align: left;
@@ -271,7 +252,6 @@ button:disabled {
   justify-content: space-around;
   color: white;
   border-color: var(--col1);
-  box-shadow: var(--col1);
 }
 
 /* Media query: tablets and larger (768px and up) */
