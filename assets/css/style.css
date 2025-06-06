@@ -10,6 +10,8 @@
 body {
   background-color: var(--col1);
   color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 body,
 html {
@@ -25,8 +27,7 @@ html {
 
 .question p {
   color: white;
-  /* font-size: 17px; */
-  font-size: 15px;
+ font-size: 17px;
   width: 100%;
   text-align: center;
   border: 4px solid white;

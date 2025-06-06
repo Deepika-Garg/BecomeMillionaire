@@ -62,27 +62,126 @@ Homepage:
 ### Surface plane
 
 **Color**
-Very less colors are used so that quiz looks neat and tidy. Color Adobe is used to create the color pallete. contrast of color is good. Only first two colors purple and white is used as site colors. Red and Green color is used to highlight the wrong and right answers respectively and Golden color is used to show the progress. 
+Very less colors are used so that quiz looks neat and tidy. [Color Adobe](https://color.adobe.com/) is used to create the color pallete. contrast of color is good. Only first two colors purple and white is used as site colors. Red and Green color is used to highlight the wrong and right answers respectively and Golden color is used to show the progress. 
 
 ![Colors Pallete](assets/readmeImages/colorsPallete.png)
 
+**Font:**
+Font for the quiz is used 'Segoe UI'. Different font size is being used between question and answers to differentiate but same font.
+
+**Images:**
+In total only three images are used in the quiz. One for logo and favicon and two images of phone and audiance for two life lines respectively. 
+
+Image Sources  
+[WhoWantsToBeMillionaireLogo](https://img.playstationtrophies.org/images/trophies/1297/ico.png)
+
+[AudiancePoll](https://millionaire.fandom.com/wiki/Ask_the_Audience?file=ATA_2018.gif)
+
+[Fifty-Fifty](https://millionaire.fandom.com/wiki/50:50?file=50-50_2018.gif)
+
+
+## Existing Features
+> - Title/logo
+![Logo](assets/images/KBC.png)
+
+
+> - Rules Explained
+Modal is used to describe the rules of the game on the click of rules button on the top of page.
+
+
+![Rules screenshot](assets/readmeImages/rules.png)
+
+The background and logo change colour accordingly using JS.
+
+> - Sound On/Off Button
+
+Correct answer and wrong answer sound has been added, which can be which can be toggle on and off by the user for there preference.
+
+![Sound On screenshot](assets/readmeImages/soundOn.png)
+![Sound Off screenshot](assets/readmeImages/soundOff.png)
+
+> - Quiz questions and answers
+
+Questions are pulled from the defined list of 12 sets with 3 questions in each set.
+
+Answer buttons highlight when hovered over (large devices) to create positive UX.
+
+![Quiz screenshot](assets/readmeImages/quiz.png)
+
+Score/Prize Money increments with every correct answer.
+
+![ProgressBar screenshot](assets/readmeImages/progressBar.png)
+
+After user has selected an answer, if the answer is correct then new question appear and progress bar get updated as in previous image. If the answer is wrong then selected answer get highlighted with red color and right answer with Green color. screen freeze and this is end of game.
+
+![wrongAnswer screenshot](assets/readmeImages/wrongAnswer.png)
+
+Just after 1 second a modal appear and indicate Game End. It shows the prize money, congratulate the player and give option to play again.
+
+![Alert screenshot](assets/readmeImages/alertScreenshot.png)
+
+
+## Future Features
+### Home page
+> - Ratherthan a single page application I will add a home page with welcome message and game rule and then convert this only page as a quiz page.
+> - I would like to include some sort of animation when user win £1,000,000.
+> - I want to add the third lifeline Phone a Friend like actual original game.  
+
+## Languages used
+
+> - HTML5
+> - CSS3
+> - Javascript
+
+## Technologies used
+> - Bootstrap: I used Bootstrap to help build my site in a responsive layout. (https://getbootstrap.com/docs/5.3/getting-started/)
+> - Google Fonts: The font 'Segoe UI' was used for the main body of the site. 
+> - Font Awesome: was used to import sound on/off icons for the sound button. 
+> - Git: I used VSCode as a code space to create the site from which I pushed my site to Github for deployment.
+> - GitHub: I used GitHub as the respository for the projects code after being pushed from VSCode.
+> - Balsamiq: I used Balsamiq to create wireframes to outline to design of the site.
+> - Color Adobe: I used color Adobe to generate a colour palette.
+
+## Testing
+
+
+## HTML validator:
+
+Errors thrown by HTML Validator during Testing. 
+
+![HTML validator error screenshot](testing/HTMLValidator/validationFailImageHTML.png)
+
+Errors has been corrected and following is the screenshot provided.
+
+![HTML validator Pass screenshot](testing/HTMLValidator/validationPassImageHTML.png)
+
+
+## CSS validator:
+
+Errors thrown by CSS Validator during Testing.
+
+![CSS validator error screenshot](testing/CSSValidation/validationFailImageCSS.png)
+
+Errors has been corrected and following is the screenshot provided.
+
+![CSS validator error screenshot](testing/CSSValidation/validationPassImageCSS.png)
+
+## JavaScript validator:
+
+![javaScript validator screenshot](testing/JavascriptValidation/JSHintTest.png)
+
+Functions shown unused in the Validator image are the function which are called in HTML file on onclick() event of corresponding buttons.
 
 
 
-![Javascript Test Result Image](assets/readmeImages/JSHintTest.png)
 
-html error
-![alt text](image.png)
-![alt text](image-1.png)
 
-html fixes
-![alt text](image-2.png)
 
-css test images Error
-![alt text](image-3.png)
 
-corrected css
-![alt text](image-4.png)
+
+
+
+
 
 
 
