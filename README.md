@@ -186,6 +186,30 @@ Some Meta tags and aria-labels has been added to improve the testing results.
 ![Lighthouse Mobile testing screenshot](testing/LighthouseValidation/MobileLHTesting.png)
 
 
+## Manual Testing
+### User testing
+| Feature being tested:| Steps                                | Expected outcome  | Pass/Fail |
+|:---------------------|:-------------------------------------|:------------------|-----|
+| Rules button - Logo | Click of Rules button. | A popup should appear with all the game rules.           | PASS |
+| Rules Popup/Modal | click on X/close button or click on anywhere on the screen other than popup.                                 | Popup should disappear.  | PASS |
+| Sound button | click the sound button | Sound of correct answer and wrong answer should be toggle on/off | PASS |
+| Game Logo | Hover on the game logo | Logo should be bigger in size by 10% | PASS |
+| Question's font size | Test on smaller screen size | It's font size should be smaller on small screen. | PASS |
+| Questions | Play quiz multiple time. | Questions should be randomly generated out of set of 3 questions for same level/prize money. | PASS |
+| Answer buttons | Hover mouse over buttons/Tap on mobile device. | Buttons should highlight when hovered and select the answer when clicked. | PASS |
+| Answer buttons |Select the correct answer | 1. Button should highlight with 'Green' color. 2. In the progress bar on the right winning amount should be green and next question amount should be golden color. 3. Next question should appear randomly on the screen from set of 3 questions.  | PASS |
+| Answer buttons | Select the wrong answer | Buttons should highlight with 'Red' color and correct answer should highlight with 'Green' color. PopUp should appear to warn that game is over and 'Start Again' button. | PASS |
+| Quiz/Home page - UX | Read through every question. | Text should all be clear and easily readable and the questions make sense. | PASS|
+|Progress Bar/Ladder - score/PrizeMoney counter | Play quiz whole way through on each level. | Score should incrememnt by 1 step up for every correct answer. Current Question should be highlighted with golden color and score for completed questions should be highlighted with green color. | PASS |
+| Fifty-Fifty Lifeline | Click on it. | Two wrong answers should disappear randomly. Now you should be left with only two answer options including correct one. Lifeline's visibility should be degraded immidiately to indicate that it has been used.| PASS |
+| Fifty-Fifty Lifeline | Click on it again during the same game. | Alert message should appear to warn Lifelines can be used only once. No answer option is removed this time.| PASS |
+| Audiance Poll Lifeline | Click on it. | Right answer should be highlighted with Green Color. Lifeline's visibility should be degraded immidiately to indicate that it has been used.| PASS |
+| Audiance Poll Lifeline | Click on it again during the same game. | Alert message should appear to warn Lifelines can be used only once. No answer option is highlighted green this time.| PASS |
+| End game - finish message | Complete quiz or select wrong answer | End game message should alter based on winning amount. Text should be clear and legible. | PASS |
+| End game  - Start again button | Click button | Quiz should reset back to the beginning | PASS| 
+| Responsiveness - UX | Resize site for all device sizes. | Check that images/text/other elements resize as expected, text should be readable and elements should all be visible and not overlap randomly. | PASS|
+| 404 Page - UX | Make a mistake in browser address | 404 Page should appear with the site logo and an Error message with a back to main quiz button | PASS|
+| Back to Home Page Button | Click on it | It should redirect you to home/main/quiz page with a reset quiz. | PASS|
 
 
 
