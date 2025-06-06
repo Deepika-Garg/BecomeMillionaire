@@ -126,6 +126,7 @@ Just after 1 second a modal appear and indicate Game End. It shows the prize mon
 > - Ratherthan a single page application I will add a home page with welcome message and game rule and then convert this only page as a quiz page.
 > - I would like to include some sort of animation when user win £1,000,000.
 > - I want to add the third lifeline Phone a Friend like actual original game.  
+> - I would learn and add keyboard Navigation for my quiz.
 
 ## Languages used
 
@@ -134,7 +135,7 @@ Just after 1 second a modal appear and indicate Game End. It shows the prize mon
 > - Javascript
 
 ## Technologies used
-> - Bootstrap: I used Bootstrap to help build my site in a responsive layout. (https://getbootstrap.com/docs/5.3/getting-started/)
+> - Bootstrap: I used [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/) to help build my site in a responsive layout. 
 > - Google Fonts: The font 'Segoe UI' was used for the main body of the site. 
 > - Font Awesome: was used to import sound on/off icons for the sound button. 
 > - Git: I used VSCode as a code space to create the site from which I pushed my site to Github for deployment.
@@ -170,13 +171,19 @@ Errors has been corrected and following is the screenshot provided.
 
 ![javaScript validator screenshot](testing/JavascriptValidation/JSHintTest.png)
 
-Functions shown unused in the Validator image are the function which are called in HTML file on onclick() event of corresponding buttons.
+Note: Functions shown unused in the Validator image are the function which are called in HTML file on onclick() event of corresponding buttons.
 
 ## Lighthouse Testing
 
-![alt text](image.png)
+**Testing for Desktop**
+![Lighthouse Desktop testing screenshot](testing/LighthouseValidation/DesktopLHTestingBeforeCorrection.png)
+
+Some Meta tags and aria-labels has been added to improve the testing results.
+![Lighthouse Desktop testing after correction screenshot](testing/LighthouseValidation/DesktopLHTestingAfterCorrection.png)
 
 
+**Testing for Mobile Device**
+![Lighthouse Mobile testing screenshot](testing/LighthouseValidation/MobileLHTesting.png)
 
 
 
