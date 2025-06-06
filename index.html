@@ -36,13 +36,13 @@
             <div class="row mb-4">
                 <span>
                   <!--modal Rules button-->
-                  <button type="button" class="rulesBtn">
+                  <button type="button" class="rulesBtn" aria-label="Game rules button">
                     Rules
                   </button>
                              
                 <!--Sound toggle button-->
                 <button name="toggleSoundBtn" id="toggleSoundBtn"><i
-                      class="fa-solid fa-volume-high"></i></button>
+                      class="fa-solid fa-volume-high" aria-label="Volume On"></i></button>
                
               </span>    
             </div>         
@@ -56,8 +56,8 @@
                   <div id="modalHeader" class="header mb-2"></div>
                   <h5>Do you want to restart the game?</h5>
                   <div class="modalBtns">
-                    <button id="cancelBtn" class="btn ">Cancel</button>
-                    <button id="restartBtn" class="btn ">Start Again</button>
+                    <button id="cancelBtn" class="btn" aria-label="Cancel button">Cancel</button>
+                    <button id="restartBtn" class="btn" aria-label="Start new game">Start Again</button>
                   </div>
                 </div>
               </div>
@@ -70,24 +70,24 @@
             <div class="answer">
               <div class="row">
                 <div class="col-12 col-md-6 mb-2">
-                  <button type="button" class="btn w-100 ansBtn">
+                  <button type="button" class="btn w-100 ansBtn" aria-label="Answer option A">
                     <span>A. </span>Answer 1
                   </button>
                 </div>
                 <div class="col-12 col-md-6 mb-2">
-                  <button type="button" class="btn w-100 ansBtn">
+                  <button type="button" class="btn w-100 ansBtn" aria-label="Answer option B">
                     <span>B. </span>Answer 2
                   </button>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-6 mb-2">
-                  <button type="button" class="btn w-100 ansBtn">
+                  <button type="button" class="btn w-100 ansBtn" aria-label="Answer option C">
                     <span>C. </span>Answer 3
                   </button>
                 </div>
                 <div class="col-12 col-md-6 mb-2">
-                  <button type="button" class="btn w-100 ansBtn">
+                  <button type="button" class="btn w-100 ansBtn" aria-label="Answer option D">
                     <span>D. </span>Answer 4
                   </button>
                 </div>
@@ -111,7 +111,7 @@
             </div>
           </div>
            <div class="container-fluid mt-5 row"> 
-            <ul id="ladder" class="ladder justify-content-center align-items-center">
+            <ul id="ladder" class="ladder justify-content-center align-items-center" aria-label="Progress Bar">
               <!-- Ladder items will be filled dynamically -->
             </ul>
           </div> 
@@ -126,7 +126,7 @@
               <div class="modal" id="modal">
                 <div class="modal-header">
                   <div class="title">Game Rules</div>
-                  <button class="closeButton">
+                  <button class="closeButton" aria-label="Game rules close button">
                     &times;
                   </button>
                 </div>
