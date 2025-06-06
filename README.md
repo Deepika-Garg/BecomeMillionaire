@@ -172,6 +172,10 @@ Errors has been corrected and following is the screenshot provided.
 
 Functions shown unused in the Validator image are the function which are called in HTML file on onclick() event of corresponding buttons.
 
+## Lighthouse Testing
+
+![alt text](image.png)
+
 
 
 
