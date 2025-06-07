@@ -242,6 +242,58 @@ Some Meta tags and aria-labels has been added to improve the testing results.
 | Back to Home Page Button | Click on it | It should redirect you to home/main/quiz page with a reset quiz. | PASS|
 
 
+## Deployment
+
+The steps to deploy the project are as follows:
+
+1. Click on Settings on the navigation menu in the repository
+2. Selected the Pages menu on the left side bar.
+3. In the first dropdown menu labeled Source select the branch of the name 'main' from the dropdown.
+4. In the next dropdown menu select '/root' as the default option.
+5. Select Save
+6. After couple of minutes project become live
+
+![screenshot of correct settings on Github](assets/readmeImages/deployedSiteImg.png)
+
+7. If you want your own custom domain name you would have to purchase one with an external provider and enter it in the box towards the bottom of the page above.
+
+## Credits
+### Images sources:
+> - [WhoWantsToBeMillionaireLogo](https://img.playstationtrophies.org/images/trophies/1297/ico.png)
+> - [AudiancePoll](https://millionaire.fandom.com/wiki/Ask_the_Audience?file=ATA_2018.gif)
+> - [Fifty-Fifty](https://millionaire.fandom.com/wiki/50:50?file=50-50_2018.gif)
+
+### Tutorials:
+> - Quiz building tutorial (https://www.youtube.com/watch?v=PBcqGxrr9g8)
+> - Quiz building tutorial (https://www.youtube.com/watch?v=TYCHpO4D50Y)
+> - javaScript tutorials w3 schools (https://www.w3schools.com/js/default.asp)
+
+
+### Content and Resources:
+> - Fonts sourced from Google Fonts: (https://fonts.google.com/selection/embed)
+> - Am I responsive screenshots for Readme: (https://ui.dev/amiresponsive)
+> - Markdown cheatsheet: (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+> - Favicon: (https://favicon.io/emoji-favicons/)
+
+#### Acknowledgments: 
+I would like to thank following people for the help and advise they have given me in this project.
+
+* My mentor Precious Ijege for his guidence and feedback throughout this milestone project.
+* Marco Tot our class cohort facilitator for his constant assistance and encouragement.
+* Slack Community for their endless support.
+* Code institute for the outstanding course documentation and for providing opportunity to learn and develop this project.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
