@@ -34,10 +34,12 @@ html {
   padding: 10px 20px;
   border-radius: 10px;
 }
-.rulesBtn,
+#rulesBtn,
 #toggleSoundBtn,
 #cancelBtn,
-#restartBtn {
+#restartBtn,
+#playAgainBtn
+{
   font-size: 15px;
   text-align: center;
   border: 1px solid white;
@@ -49,14 +51,34 @@ html {
   color: white;
 }
 
-.rulesBtn:hover,
+#rulesBtn:hover,
 #toggleSoundBtn:hover,
 #cancelBtn:hover,
-#restartBtn:hover {
+#restartBtn:hover,
+#playAgainBtn:hover {
   background-color: white;
   color: var(--col1);
   border: 1px solid var(--col1);
   z-index: 10;
+} 
+
+
+.btn {
+  color: white;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  border: 4px solid white;
+  padding: 10px 20px;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: white;
+  cursor: pointer;
+  color: var(--col1);
+   
 }
 .modal,
 #overlay {
@@ -130,24 +152,6 @@ html {
   pointer-events: all;
 }
 
-.btn {
-  color: white;
-  font-size: 12px;
-  width: 100%;
-  text-align: center;
-  border: 4px solid white;
-  padding: 10px 20px;
-  justify-content: space-between;
-  border-radius: 10px;
-}
-.returnBtn {
-  width: fit-content;
-}
-.btn:hover {
-  background-color: white;
-  cursor: pointer;
-  color: var(--col1);
-}
 
 button.correct {
   background-color: #28a745 !important; /* Green */

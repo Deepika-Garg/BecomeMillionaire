@@ -478,14 +478,12 @@ function setQueAndAns(queSet) {
         button.classList.add("correct");
         correctSound.play();
         score = progressSet[currentQuestion - 1].prize;
-
         setTimeout(() => {
           currentQuestion++;
           renderLadder(currentQuestion);
           if (currentQuestion <= 12) {
             showQueAndAns(currentQuestion);
           } else {
-            //alert("Congratulations! You've won £1 Million!");
             showResetModal();
           }
         }, 1000); // 1 second delay to show feedback
@@ -518,12 +516,11 @@ function goHome() {
 }
 
 //function for alert message if lifeline are already being used.
-function alertMessage()
-{
-modalHeader.innerHTML=`<h5>Lifeline can be used only once and it has been already used.<h5>`;
-restartBtn.style.display="none";
-modalBody.style.display="none";
-resetModal.style.display="flex";
+function alertMessage() {
+  modalHeader.innerHTML = `<h5>Lifeline can be used only once and it has been already used.<h5>`;
+ restartBtn.style.display = "none";
+  modalBody.style.display = "none";
+  resetModal.style.display = "flex";
 }
 
 //Function for 50-50 life line
@@ -542,7 +539,6 @@ function fiftyFifty() {
     //removing only 2 wrong buttons for 50-50 functionality
     for (let i = 0; i < 2; i++) {
       wrongButtons[i].disabled = true;
-      //wrongButtons[i].classList.add("wrong");
       wrongButtons[i].remove();
     }
     //disabling the image after one use
@@ -554,9 +550,9 @@ function fiftyFifty() {
 
 //functionality for audiance poll button/Image
 let isAPLifeLineUsed = false;
- const imageAP = document.getElementById("audiancePollImg");
+const imageAP = document.getElementById("audiancePollImg");
 function audiancePoll() {
-  
+
   if (isAPLifeLineUsed) {
     alertMessage();
   } else {
@@ -573,17 +569,17 @@ function audiancePoll() {
   }
 }
 function lifeLineStatusReset(isLifeLineUsed, lifeLineimage) {
-   if(!isLifeLineUsed)
-   {
-     lifeLineimage.style.cursor = "pointer"; // Makes it look clickable again
-     lifeLineimage.style.opacity = 1; // Full visibility
-   }}
+  if (!isLifeLineUsed) {
+    lifeLineimage.style.cursor = "pointer"; // Makes it look clickable again
+    lifeLineimage.style.opacity = 1; // Full visibility
+  }
+}
 
 //functionality for modal
 
 //get elements
 const modal = document.getElementById("modal");
-const openRulesBtn = document.querySelector(".rulesBtn");
+const openRulesBtn = document.getElementById("rulesBtn");
 const closeRulesBtn = document.querySelector(".closeButton");
 const overlay = document.getElementById("overlay");
 
@@ -621,16 +617,18 @@ toggleSoundBtn.addEventListener("click", toggleSound);
 
 
 //functionality for captured variable for reset game modal
-const modalHeader=document.getElementById("modalHeader");
-const modalBody=document.getElementById("modalBody");
+const modalHeader = document.getElementById("modalHeader");
+const modalBody = document.getElementById("modalBody");
 const resetModal = document.getElementById("resetModal");
 const cancelBtn = document.getElementById("cancelBtn");
 const restartBtn = document.getElementById("restartBtn");
 
 // Function to show modal
 function showResetModal() {
-  modalHeader.innerHTML=` <h5>Game Over! Congratulations You have won £${score}<h5>`;
-  resetModal.style.display = "flex";
+  modalHeader.innerHTML = ` <h5>Game Over! Congratulations You have won £${score}<h5>`;
+  restartBtn.style.justifyContent="center"; 
+  restartBtn.style.display = "flex"; 
+    resetModal.style.display = "flex";
 }
 
 // Cancel button closes modal
@@ -641,15 +639,23 @@ cancelBtn.onclick = () => {
 // Start Again button logic
 restartBtn.onclick = () => {
   resetModal.style.display = "none";
+  resetQuiz();
+}
 
+//Replay button logic
+const playAgainBtn=document.getElementById("playAgainBtn");
+playAgainBtn.onclick=()=>{
+  resetQuiz();
+}
 
+function resetQuiz(){
   // Added reset logic here
   currentQuestion = 1;
   score = 0;
   renderLadder(currentQuestion);
   showQueAndAns(currentQuestion);
   isFiftyLifeLineUsed = false;
-  lifeLineStatusReset(isFiftyLifeLineUsed,image50);
+  lifeLineStatusReset(isFiftyLifeLineUsed, image50);
   isAPLifeLineUsed = false;
-  lifeLineStatusReset(isAPLifeLineUsed,imageAP);
+  lifeLineStatusReset(isAPLifeLineUsed, imageAP);
 };

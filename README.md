@@ -12,8 +12,8 @@
   > - As a user I want to be able to play a fun and engaging game.
   > - As a user I want to test my general Knowledge about the world.
   > - As a user I want to intuitively navigate the site without confusion.
-  > - As a user I want to be able to see a running score as the game progresses.
-  > - As a user I want to see my final score when I have completed the quiz.
+  > - As a user I want to be able to see a running score/prize money as the game progresses.
+  > - As a user I want to see my final winning amount when I have completed the quiz.
   > - As a user I want to see if any help/hint available for me to complete the quiz and win as much as possible.
 
 ### Quiz site Owner
@@ -87,7 +87,6 @@ Image Sources
 
 > - Rules Explained
 Modal is used to describe the rules of the game on the click of rules button on the top of page.
-
 
 ![Rules screenshot](assets/readmeImages/rules.png)
 
