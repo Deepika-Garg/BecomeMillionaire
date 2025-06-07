@@ -120,6 +120,36 @@ Just after 1 second a modal appear and indicate Game End. It shows the prize mon
 
 ![Alert screenshot](assets/readmeImages/alertScreenshot.png)
 
+## Lifelines
+
+There are 2 lifelines are provided to help player, called '50:50' and 'AudiancePoll'. These will help user to figure out the right answer and win maximum money they can. 
+
+![Lifelines screenshot](assets/readmeImages/lifeLines.png)
+
+**LifeLine Fifty-Fifty**
+ On click of '50:50' two actions occur.
+ 1. Two random wrong answers get deleted and player is left with only 2 choices to select from including the right one. It makes game easy for player.
+
+ ![Removed wrong options screenshot](assets/readmeImages/quizAfter50-50Used.png)
+
+2. Button itself get faded to indicate that it is used.
+
+![Faded '50:50' screenshot](assets/readmeImages/faded50-50.png)
+
+**LifeLine AudiancePoll**
+ On click of 'AudiancePoll' lifeline two actions occur.
+ 1. Right answer will get highlight with 'Green' color.
+
+ ![Highlight Right option screenshot](assets/readmeImages/quizAfterAPUsed.png)
+
+2. Button itself get faded to indicate that it is used.
+
+![Faded 'AudiancePoll' screenshot](assets/readmeImages/fadedAP.png)
+
+3. If you try to use any of the lifeline again during the same game. It shows a message "Lifelines can be used only once".
+
+![Lifeline alert message screenshot](assets/readmeImages/lifelineUsedAlert.png)
+
 
 ## Future Features
 ### Home page

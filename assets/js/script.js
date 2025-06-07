@@ -500,8 +500,6 @@ function setQueAndAns(queSet) {
         });
 
         setTimeout(() => {
-          // alert("Wrong answer. Game Over.");
-          // alert(`You have won £${score}`);
           showResetModal();
         }, 1000);
       }
@@ -519,12 +517,21 @@ function goHome() {
   window.location.href = "index.html";
 }
 
+//function for alert message if lifeline are already being used.
+function alertMessage()
+{
+modalHeader.innerHTML=`<h5>Lifeline can be used only once and it has been already used.<h5>`;
+restartBtn.style.display="none";
+modalBody.style.display="none";
+resetModal.style.display="flex";
+}
+
 //Function for 50-50 life line
 let isFiftyLifeLineUsed = false;
 const image50 = document.getElementById("50-50Img");
 function fiftyFifty() {
   if (isFiftyLifeLineUsed) {
-    window.alert("Lifeline can be used only once");
+    alertMessage();
   } else {
     const buttons = allAnswers.querySelectorAll("button");
     const correctAnswer = currentRandomQuestion.correct;
@@ -551,7 +558,7 @@ let isAPLifeLineUsed = false;
 function audiancePoll() {
   
   if (isAPLifeLineUsed) {
-    window.alert("Lifeline can be used only once");
+    alertMessage();
   } else {
     const buttons = allAnswers.querySelectorAll("button");
     buttons.forEach((btn) => {
@@ -612,15 +619,17 @@ function toggleSound() {
 }
 toggleSoundBtn.addEventListener("click", toggleSound);
 
-//functionality for reset game modal
+
+//functionality for captured variable for reset game modal
+const modalHeader=document.getElementById("modalHeader");
+const modalBody=document.getElementById("modalBody");
 const resetModal = document.getElementById("resetModal");
 const cancelBtn = document.getElementById("cancelBtn");
 const restartBtn = document.getElementById("restartBtn");
 
 // Function to show modal
 function showResetModal() {
-  const modalContent= document.getElementById("modalHeader");
-  modalContent.innerHTML=` <h5>Game Over! Congratulations You have won £${score}<h5>`;
+  modalHeader.innerHTML=` <h5>Game Over! Congratulations You have won £${score}<h5>`;
   resetModal.style.display = "flex";
 }
 
@@ -632,7 +641,9 @@ cancelBtn.onclick = () => {
 // Start Again button logic
 restartBtn.onclick = () => {
   resetModal.style.display = "none";
-  // Add your reset logic here
+
+
+  // Added reset logic here
   currentQuestion = 1;
   score = 0;
   renderLadder(currentQuestion);

@@ -121,6 +121,8 @@ html {
 
 .modal-body {
   padding: 10px 15px;
+  font-size: large;
+  color:var(--col1);
 }
 
 #overlay.active {
