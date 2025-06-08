@@ -385,16 +385,16 @@ function renderLadder(currentId = 1) {
 
   // Reverse so highest prize is at top
   [...progressSet].reverse().forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent = `£${item.prize.toLocaleString()}`;
+    const li = document.createElement("li");//creating a list element by element
+    li.textContent = `£${item.prize.toLocaleString()}`;//assigning prize money to each element in the loop
 
     if (item.id === currentId) {
-      li.classList.add("active");
+      li.classList.add("active");// current item corresponding to current question will be golden color
     } else if (item.id < currentId) {
-      li.classList.add("passed");
+      li.classList.add("passed");// all the items/score below current item will be green color. 
     }
 
-    ladderEl.appendChild(li);
+    ladderEl.appendChild(li);//finally append the child to the ladder element one by one and list will render on the screen
   });
 }
 
@@ -452,6 +452,7 @@ function setQueAndAns(queSet) {
                    <span>D. </span>${currentRandomQuestion.d}</button>
                 </div>
               </div>`;
+
   // Add click handlers to each answer button
   const buttons = allAnswers.querySelectorAll("button");
 
@@ -460,7 +461,7 @@ function setQueAndAns(queSet) {
     btn.disabled = false;
     btn.classList.remove("correct", "wrong");
   });
-
+// button clicked by user will go to selected answer variablefrom following arrow function
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const selectedAnswer = button.dataset.answer;
@@ -474,31 +475,34 @@ function setQueAndAns(queSet) {
       // Disable all buttons immediately
       buttons.forEach((btn) => (btn.disabled = true));
 
-      if (selectedAnswer === currentRandomQuestion.correct) {
-        button.classList.add("correct");
-        correctSound.play();
-        score = progressSet[currentQuestion - 1].prize;
+      // logic if selected answer is correct
+      if (selectedAnswer === currentRandomQuestion.correct) { //Compare selected answer with current question correct answer 
+        button.classList.add("correct");    //if yes, button will highlight green
+        correctSound.play();                // correct sound will play
+        score = progressSet[currentQuestion - 1].prize; //score will be set from progress set 
         setTimeout(() => {
           currentQuestion++;
-          renderLadder(currentQuestion);
+          renderLadder(currentQuestion);//updated ladder/progress bar will render on screen 
           if (currentQuestion <= 12) {
-            showQueAndAns(currentQuestion);
+            showQueAndAns(currentQuestion);//if haven't played all 12 questions then next random question will render on screen with all the answers
           } else {
-            showResetModal();
+            showResetModal();   //If already played 12th question, start again popup will show up with congratulation message.
           }
         }, 1000); // 1 second delay to show feedback
-      } else {
-        button.classList.add("wrong");
-        wrongSound.play();
+      } 
+      //Logic if selected answer is wrong
+      else {
+        button.classList.add("wrong");//if selected answer is wrong then it will be highlighted with red color.
+        wrongSound.play();            //Wrong Answer sound will play.
         // Highlight the correct answer
         buttons.forEach((btn) => {
+          //checking for each button if it contains the correct answer
           if (btn.dataset.answer === currentRandomQuestion.correct) {
-            btn.classList.add("correct");
+            btn.classList.add("correct"); //button with correct answer will highlight with green color
           }
         });
-
-        setTimeout(() => {
-          showResetModal();
+        setTimeout(() => {//time delay added for breathing space
+          showResetModal();//With every wrong answer game will finish and reset modal show up, which ask if you want to play again.
         }, 1000);
       }
     });
