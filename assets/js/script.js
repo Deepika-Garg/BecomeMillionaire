@@ -609,9 +609,7 @@ const allSounds = [correctSound, wrongSound, congratsSound];
 function toggleSound() {
   isSoundOn = !isSoundOn;
   allSounds.forEach((sound) => (sound.muted = !isSoundOn));
-  toggleSoundBtn.innerHTML = isSoundOn
-    ? '<i class="fa-solid fa-volume-high"></i>'
-    : '<i class="fa-solid fa-volume-xmark"></i>';
+  toggleSoundBtn.innerHTML = isSoundOn ? '<i class="fa-solid fa-volume-high"></i>' : '<i class="fa-solid fa-volume-xmark"></i>';
 }
 toggleSoundBtn.addEventListener("click", toggleSound);
 
@@ -634,19 +632,20 @@ function showResetModal() {
 // Cancel button closes modal
 cancelBtn.onclick = () => {
   resetModal.style.display = "none";
+  
 };
 
 // Start Again button logic
 restartBtn.onclick = () => {
   resetModal.style.display = "none";
   resetQuiz();
-}
+};
 
-//Replay button logic
+//Replay/play Again button logic
 const playAgainBtn=document.getElementById("playAgainBtn");
 playAgainBtn.onclick=()=>{
   resetQuiz();
-}
+};
 
 function resetQuiz(){
   // Added reset logic here
@@ -658,4 +657,4 @@ function resetQuiz(){
   lifeLineStatusReset(isFiftyLifeLineUsed, image50);
   isAPLifeLineUsed = false;
   lifeLineStatusReset(isAPLifeLineUsed, imageAP);
-};
+}

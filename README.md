@@ -199,7 +199,7 @@ Errors has been corrected and following is the screenshot provided.
 ## JavaScript validator:
 
 ![javaScript validator screenshot](testing/JavascriptValidation/JSHintTest.png)
-
+![alt text](image.png)
 Note: Functions shown unused in the Validator image are the function which are called in HTML file on onclick() event of corresponding buttons.
 
 ## Lighthouse Testing
