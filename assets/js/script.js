@@ -561,7 +561,10 @@ function goHome() {
 function alertMessage() {
   modalHeader.innerHTML = `<h5>Lifeline can be used only once and it has been already used.<h5>`;
   restartBtn.style.display = "none";
+  exitBtn.style.display="none";
   modalBody.style.display = "none";
+  cancelBtn.style.justifyContent = "center";
+  cancelBtn.style.display="flex";
   resetModal.style.display = "flex";
 }
 
@@ -617,33 +620,6 @@ function lifeLineStatusReset(isLifeLineUsed, lifeLineimage) {
   }
 }
 
-// //functionality for modal
-
-// //get elements
-// const modal = document.getElementById("modal");
-// const openRulesBtn = document.querySelector(".rulesBtn");
-// const closeRulesBtn = document.querySelector(".closeButton");
-// const overlay = document.getElementById("overlay");
-
-// // Show modal
-// openRulesBtn.onclick = function () {
-//   modal.classList.add("active");
-//   overlay.classList.add("active");
-// };
-
-// // Close modal
-// closeRulesBtn.onclick = function () {
-//   modal.classList.remove("active");
-//   overlay.classList.remove("active");
-// };
-
-// // Close modal when overlay is clicked
-// overlay.onclick = function () {
-//   modal.classList.remove("active");
-//   overlay.classList.remove("active");
-// };
-
-
 //functionality for toggling sound of all the audio
 let isSoundOn = true;
 const toggleSoundBtn = document.getElementById("toggleSoundBtn");
@@ -663,10 +639,14 @@ const modalBody = document.getElementById("modalBody");
 const resetModal = document.getElementById("resetModal");
 const cancelBtn = document.getElementById("cancelBtn");
 const restartBtn = document.getElementById("restartBtn");
+const exitBtn=document.getElementById("exitBtn");
 
 // Function to show modal
 function showResetModal() {
-  modalHeader.innerHTML = score>0?` <h5>Well Played! Congratulations You have won £${score}<h5>`:`<h5>Better Luck, Next time! Keep Trying</h5>`;
+  modalHeader.innerHTML = score>0 ? `<h5>Well Played! Congratulations You have won £${score}<h5>`:`<h5>Better Luck, Next time! Keep Trying</h5>`;
+  cancelBtn.style.display="none";
+  exitBtn.style.justifyContent = "center";
+  exitBtn.style.display = "flex";
   restartBtn.style.justifyContent = "center";
   restartBtn.style.display = "flex";
   resetModal.style.display = "flex";
@@ -674,6 +654,11 @@ function showResetModal() {
 
 // Cancel button closes modal
 cancelBtn.onclick = () => {
+  resetModal.style.display = "none";
+};
+
+//Exit button redirect to home page
+exitBtn.onclick = () => {
   resetModal.style.display = "none";
 goHome();
 };
