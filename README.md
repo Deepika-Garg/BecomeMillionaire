@@ -17,6 +17,7 @@
   > - As a user I want to see if any help/hint available for me to complete the quiz and win as much as possible.
 
 ### Quiz site Owner
+  > - As the site owner I want to offer a Welcome Page.
   > - As the site owner I want to provide a fun and engaging quiz for the user.
   > - As the site owner I want the user to be able to replay the game multiple times.
   > - As the site owner I want to questions to appear randomly and different for the same level to make it more engaging.
@@ -31,11 +32,18 @@
   > - Every time the user give wrong answer and game finishes, they must have choice to start the game again.
 
 ## Structure Plane 
-### (This is a single page game. Messages are shown on click of buttons in form of Modal and are hidden or displayed via display: block/hidden css)
+### (This is a single page game, with a welcome Page and 404 page. Messages are shown on click of buttons in form of Modal and are hidden or displayed via display: flex/none css)
 
 > - Site logo/title 
 
-Home page
+Home Page
+> - Welcome message to the user.
+> - Site Logo
+> - Start Quiz button to start the game
+> - Rules button to explain the games rules to user/player
+
+Quiz page
+> - Home button will take user to Welcome page.
 > - On click of Rules button on the page a modal appears and briefly describes quiz.
 > - Different sounds has been added for the right and wrong answer and sound button can be used to toggle on/off the sound.
 > - Who wants to be a millionaire logo/image for asthetic.
@@ -45,18 +53,27 @@ Home page
 > - Lifeline Audiance Poll will highlight the right answer in green color. 
 
 End game Modal/PopUp
-> - PopUp will appear if the wrong answer selected to 'Start again' button to encourage user to restart the game.
+> - PopUp will appear if the wrong answer selected to 'Start again' button to encourage user to restart the game. Exit Game button will redirect the user to Welcome Page. 
 > - Modal will show your winning amount with a congratulations message.
+
+Lifeline used Modal
+> - It shows the message lifeline has already been used, if user try to take it's help more than once.
 
 404 Page
 > - 404 Page with the logo.
 > - Error Message.
-> - Return to home button to go back to the quiz 
+> - Return to home button to go back to the Welcome Page/Home Page 
 
 ### Wireframes:
 
-Homepage:
-![Home wireframes](assets/readmeImages/wireframe.png)
+HomePage:
+![HomePage wireframe](assets/readmeImages/wireframes/homeWireframe.png)
+
+Quizpage:
+![Quiz wireframes](assets/readmeImages/wireframes/quizWireframe.png)
+
+404ErrorPage:
+![404 wireframes](assets/readmeImages/wireframes/404Wirframe.png)
  
 
 ### Surface plane
@@ -177,20 +194,12 @@ There are 2 lifelines are provided to help player, called '50:50' and 'AudianceP
 
 ## HTML validator:
 
-Errors thrown by HTML Validator during Testing. 
-
-![HTML validator error screenshot](testing/HTMLValidator/validationFailImageHTML.png)
-
 Errors has been corrected and following is the screenshot provided.
 
 ![HTML validator Pass screenshot](testing/HTMLValidator/validationPassImageHTML.png)
 
 
 ## CSS validator:
-
-Errors thrown by CSS Validator during Testing.
-
-![CSS validator error screenshot](testing/CSSValidation/validationFailImageCSS.png)
 
 Errors has been corrected and following is the screenshot provided.
 
@@ -199,7 +208,7 @@ Errors has been corrected and following is the screenshot provided.
 ## JavaScript validator:
 
 ![javaScript validator screenshot](testing/JavascriptValidation/JSHintTest.png)
-![alt text](image.png)
+
 Note: Functions shown unused in the Validator image are the function which are called in HTML file on onclick() event of corresponding buttons.
 
 ## Lighthouse Testing
@@ -214,6 +223,31 @@ Some Meta tags and aria-labels has been added to improve the testing results.
 **Testing for Mobile Device**
 ![Lighthouse Mobile testing screenshot](testing/LighthouseValidation/MobileLHTesting.png)
 
+
+## Bugs section
+Errors thrown by HTML Validator during Testing. All error were corrected.
+
+![HTML validator error screenshot](testing/HTMLValidator/validationFailImageHTML.png)
+
+Errors thrown by CSS Validator during Testing. All errors were corrected.
+
+![CSS validator error screenshot](testing/CSSValidation/validationFailImageCSS.png)
+
+
+## Responsiveness Testing
+
+* The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Am I Responsive](https://ui.dev/amiresponsive?url=https://deepika-garg.github.io/BecomeMillionaire/index.html).
+
+|        | Galaxy S5 | iPhone 13| iPad | iPhone 15 pro| Laptop <1200px | 
+|--------|-----------|----------|------|--------------|----------------|
+| Render | pass      | pass     | pass | pass         | pass           |
+| Images | pass      | pass     | pass | pass         | pass           |
+| Links  | pass      | pass     | pass | pass         | pass           |
+
+## Browser Compatibility
+
+Become Millionaire App was tested on the following browsers with no visible issues for the user. 
+Google Chrome, Safari, Microsoft Edge. Appearance, functionality and responsiveness were consistent throughout for a range of device sizes.
 
 ## Manual Testing
 ### User testing
