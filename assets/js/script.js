@@ -457,9 +457,13 @@ const question = document.querySelector(".question div p");
 const allAnswers = document.querySelector(".answer");
 let currentRandomQuestion = null;
 
-const correctSound = new Audio("assets/sounds/right_answer.mp4");
-const wrongSound = new Audio("assets/sounds/wrong_answer.mp4");
-const congratsSound = new Audio("assets/sounds/right_answer.mp4");
+//sound variables
+const correctSound = new Audio("assets/sounds/right_answer.mp3");
+const wrongSound = new Audio("assets/sounds/wrong_answer.mp3");
+//preload code for sound/audio variables to make it faster load of page
+correctSound.preload='auto';
+wrongSound.preload='auto';
+
 
 //set random question and their answer from the given set to show on screen
 function setQueAndAns(queSet) {
@@ -499,17 +503,17 @@ function setQueAndAns(queSet) {
     btn.disabled = false;
     btn.classList.remove("correct", "wrong");
   });
+
+
   // button clicked by user will go to selected answer variablefrom following arrow function
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const selectedAnswer = button.dataset.answer;
-
       // Safety check
       if (!selectedAnswer) {
         alert("No answer selected.");
         return;
       }
-
       // Disable all buttons immediately
       buttons.forEach((btn) => (btn.disabled = true));
 
@@ -547,11 +551,14 @@ function setQueAndAns(queSet) {
   });
 }
 const showQueAndAns = (currentQuestion) => {
+
   setQueAndAns(questionSets[currentQuestion]);
 };
+
+if (window.location.pathname.includes("quiz.html")) {
 showQueAndAns(currentQuestion);
 renderLadder(currentQuestion);
-
+}
 //Fuction to Return back to the home page from 404 Error page
 function goHome() {
   window.location.href = "index.html";
@@ -623,15 +630,17 @@ function lifeLineStatusReset(isLifeLineUsed, lifeLineimage) {
 //functionality for toggling sound of all the audio
 let isSoundOn = true;
 const toggleSoundBtn = document.getElementById("toggleSoundBtn");
-const allSounds = [correctSound, wrongSound, congratsSound];
+const allSounds = [correctSound, wrongSound];
 
 function toggleSound() {
   isSoundOn = !isSoundOn;
   allSounds.forEach((sound) => (sound.muted = !isSoundOn));
   toggleSoundBtn.innerHTML = isSoundOn ? '<i class="fa-solid fa-volume-high"></i>' : '<i class="fa-solid fa-volume-xmark"></i>';
 }
+if(toggleSoundBtn)
+{
 toggleSoundBtn.addEventListener("click", toggleSound);
-
+}
 
 //functionality for captured variable for reset game modal
 const modalHeader = document.getElementById("modalHeader");
@@ -653,17 +662,20 @@ function showResetModal() {
 }
 
 // Cancel button closes modal
+if(cancelBtn)
 cancelBtn.onclick = () => {
   resetModal.style.display = "none";
 };
 
 //Exit button redirect to home page
+if(exitBtn)
 exitBtn.onclick = () => {
   resetModal.style.display = "none";
 goHome();
 };
 
 // Start Again button logic
+if(restartBtn)
 restartBtn.onclick = () => {
   resetModal.style.display = "none";
   resetQuiz();
@@ -671,6 +683,7 @@ restartBtn.onclick = () => {
 
 //Replay/play Again button logic
 const homeBtn = document.getElementById("homeBtn");
+if(homeBtn)
 homeBtn.onclick = () => {
 goHome();
 };
