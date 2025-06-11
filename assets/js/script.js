@@ -1,3 +1,40 @@
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const startGame = document.getElementById("startGameBtn");
+  if (startGame) {
+    startGame.onclick = () => {
+      window.location.href = "quiz.html";
+    }
+  }});
+document.addEventListener("DOMContentLoaded", function () {
+  const rulesBtn = document.getElementById("rulesBtn");
+  const rulesModal = document.getElementById("modal");
+  const overlay = document.getElementById("overlay");
+  const closeButton = document.querySelector(".closeButton");
+
+  if (rulesBtn && rulesModal && overlay && closeButton) {
+    // Open rulesModal
+    rulesBtn.addEventListener("click", () => {
+      rulesModal.classList.add("active");
+      overlay.classList.add("active");
+    });
+
+    // Close rulesModal
+    closeButton.addEventListener("click", () => {
+      rulesModal.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+
+    // Close rulesModal when overlay is clicked
+    overlay.addEventListener("click", () => {
+      rulesModal.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  } else {
+    console.log(" Rules Modal elements not found");
+  }
+});
 const q1set = [
   {
     question:
@@ -282,10 +319,10 @@ const q11set = [
   },
   {
     question: "What is the output of: typeof null?",
-    a: "'object'",
-    b: "'null'",
-    c: "'undefined'",
-    d: "'boolean'",
+    a: "object",
+    b: "null",
+    c: "undefined",
+    d: "boolean",
     correct: "object",
   },
   {
@@ -377,6 +414,7 @@ const progressSet = [
   },
 ];
 
+
 const ladderEl = document.getElementById("ladder");
 
 // Render the ladder
@@ -461,7 +499,7 @@ function setQueAndAns(queSet) {
     btn.disabled = false;
     btn.classList.remove("correct", "wrong");
   });
-// button clicked by user will go to selected answer variablefrom following arrow function
+  // button clicked by user will go to selected answer variablefrom following arrow function
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const selectedAnswer = button.dataset.answer;
@@ -489,7 +527,7 @@ function setQueAndAns(queSet) {
             showResetModal();   //If already played 12th question, start again popup will show up with congratulation message.
           }
         }, 1000); // 1 second delay to show feedback
-      } 
+      }
       //Logic if selected answer is wrong
       else {
         button.classList.add("wrong");//if selected answer is wrong then it will be highlighted with red color.
@@ -522,7 +560,7 @@ function goHome() {
 //function for alert message if lifeline are already being used.
 function alertMessage() {
   modalHeader.innerHTML = `<h5>Lifeline can be used only once and it has been already used.<h5>`;
- restartBtn.style.display = "none";
+  restartBtn.style.display = "none";
   modalBody.style.display = "none";
   resetModal.style.display = "flex";
 }
@@ -579,31 +617,32 @@ function lifeLineStatusReset(isLifeLineUsed, lifeLineimage) {
   }
 }
 
-//functionality for modal
+// //functionality for modal
 
-//get elements
-const modal = document.getElementById("modal");
-const openRulesBtn = document.getElementById("rulesBtn");
-const closeRulesBtn = document.querySelector(".closeButton");
-const overlay = document.getElementById("overlay");
+// //get elements
+// const modal = document.getElementById("modal");
+// const openRulesBtn = document.querySelector(".rulesBtn");
+// const closeRulesBtn = document.querySelector(".closeButton");
+// const overlay = document.getElementById("overlay");
 
-// Show modal
-openRulesBtn.onclick = function () {
-  modal.classList.add("active");
-  overlay.classList.add("active");
-};
+// // Show modal
+// openRulesBtn.onclick = function () {
+//   modal.classList.add("active");
+//   overlay.classList.add("active");
+// };
 
-// Close modal
-closeRulesBtn.onclick = function () {
-  modal.classList.remove("active");
-  overlay.classList.remove("active");
-};
+// // Close modal
+// closeRulesBtn.onclick = function () {
+//   modal.classList.remove("active");
+//   overlay.classList.remove("active");
+// };
 
-// Close modal when overlay is clicked
-overlay.onclick = function () {
-  modal.classList.remove("active");
-  overlay.classList.remove("active");
-};
+// // Close modal when overlay is clicked
+// overlay.onclick = function () {
+//   modal.classList.remove("active");
+//   overlay.classList.remove("active");
+// };
+
 
 //functionality for toggling sound of all the audio
 let isSoundOn = true;
@@ -627,16 +666,16 @@ const restartBtn = document.getElementById("restartBtn");
 
 // Function to show modal
 function showResetModal() {
-  modalHeader.innerHTML = ` <h5>Game Over! Congratulations You have won £${score}<h5>`;
-  restartBtn.style.justifyContent="center"; 
-  restartBtn.style.display = "flex"; 
-    resetModal.style.display = "flex";
+  modalHeader.innerHTML = score>0?` <h5>Well Played! Congratulations You have won £${score}<h5>`:`<h5>Better Luck, Next time! Keep Trying</h5>`;
+  restartBtn.style.justifyContent = "center";
+  restartBtn.style.display = "flex";
+  resetModal.style.display = "flex";
 }
 
 // Cancel button closes modal
 cancelBtn.onclick = () => {
   resetModal.style.display = "none";
-  
+goHome();
 };
 
 // Start Again button logic
@@ -646,12 +685,13 @@ restartBtn.onclick = () => {
 };
 
 //Replay/play Again button logic
-const playAgainBtn=document.getElementById("playAgainBtn");
-playAgainBtn.onclick=()=>{
-  resetQuiz();
+const homeBtn = document.getElementById("homeBtn");
+homeBtn.onclick = () => {
+goHome();
 };
 
-function resetQuiz(){
+
+function resetQuiz() {
   // Added reset logic here
   currentQuestion = 1;
   score = 0;

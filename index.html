@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <!-- Meta tags for search engines -->
-    <meta
-      name="description"
-      content="Quiz Game App inspired from Who wants to be Millionaire"
-    >
-    <meta
-      name="keywords"
-      content="play millionaire quiz online, test your knowledge, free quiz game, web app game, Who wants to be Millionaire "
-    >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!--Favicon-->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="assets/favicon/apple-touch-icon.png"
-    >
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="assets/favicon/favicon-32x32.png"
-    >
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
       href="assets/favicon/favicon-16x16.png"
-    >
-    <link rel="manifest" href="assets/favicon/site.webmanifest" >
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
     <!-- Bootstrap 5 CSS -->
     <link
@@ -38,215 +30,97 @@
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
-    >
+    />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" >
-    <link
-      href="https://fonts.googleapis.com/css2?family=SeogoUI&display=swap"
-      rel="stylesheet"
-    >
-
-    <title>Who Wants to Be a Millionaire | Home page</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Who Wants to Be a Millionaire | Welcome</title>
   </head>
+
   <body>
-    <div class="container-fluid mt-2">
-      <div class="row">
-        <!-- Left Section -->
-        <div class="col-8">
-          <div id="left" class="container-fluid mt-3">
-            <div class="row mb-4">
-              <span>
-                <!--modal Restart button-->
-                <button id="playAgainBtn"
-                  type="button"
-                  class="playAgainBtn"
-                  aria-label="Play again button"
-                >
-                  Restart 
-                </button>
-                <!--modal Rules button-->
-                <button
-                  id="rulesBtn"
-                  type="button"
-                  class="rulesBtn"
-                  aria-label="Game rules button"
-                >
-                  Rules
-                </button>
-
-                <!--Sound toggle button-->
-                <button name="toggleSoundBtn" id="toggleSoundBtn" class="toggleBtn" aria-label="Volume On">
-                  <i class="fa-solid fa-volume-high" ></i>
-                </button>
-              </span>
-            </div>
-
-            <div class="text-center mb-3">
-              <img
-                src="assets/images/KBC.png"
-                class="img-fluid imag"
-                alt="Game Image"
-              >
-            </div>
-            <!-- Modal -->
-            <div id="resetModal" class="modalOverlay">
-              <div id="modalContent" class="modalBox">
-                <div id="modalHeader" class="header mb-2"></div>
-                <div id="modalBody" class="modalBody">
-                <h5>Do you want to restart the game?</h5></div>
-                <div class="modalBtns">
-                  <button id="cancelBtn" class="btn" aria-label="Cancel button">
-                    Cancel
-                  </button>
-                  <button
-                    id="restartBtn"
-                    class="btn"
-                    aria-label="Start new game"
-                  >
-                    Start Again
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row question">
-            <div class="col">
-              <p>Question goes here</p>
-            </div>
-          </div>
-          <div class="answer">
-            <div class="row">
-              <div class="col-12 col-md-6 mb-2">
-                <button
-                  type="button"
-                  class="btn w-100 ansBtn"
-                  aria-label="Answer option A"
-                >
-                  <span>A. </span>Answer 1
-                </button>
-              </div>
-              <div class="col-12 col-md-6 mb-2">
-                <button
-                  type="button"
-                  class="btn w-100 ansBtn"
-                  aria-label="Answer option B"
-                >
-                  <span>B. </span>Answer 2
-                </button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 col-md-6 mb-2">
-                <button
-                  type="button"
-                  class="btn w-100 ansBtn"
-                  aria-label="Answer option C"
-                >
-                  <span>C. </span>Answer 3
-                </button>
-              </div>
-              <div class="col-12 col-md-6 mb-2">
-                <button
-                  type="button"
-                  class="btn w-100 ansBtn"
-                  aria-label="Answer option D"
-                >
-                  <span>D. </span>Answer 4
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Right Section -->
-        <div class="col-4">
-          <div class="container-fluid mt-3">
-            <div class="lifelines row">
-              <div
-                class="lifeline mb-2 justify-content-center align-items-center"
-              >
-                <img
-                  id="50-50Img"
-                  src="assets/images/50-50.webp"
-                  class="img-fluid"
-                  alt="50-50 image"
-                  onclick="fiftyFifty()"
-                >
-              </div>
-              <div
-                class="lifeline mb-5 justify-content-center align-items-center"
-              >
-                <img
-                  id="audiancePollImg"
-                  src="assets/images/AudiancePoll.webp"
-                  class="img-fluid"
-                  alt="Audience Poll"
-                  onclick="audiancePoll()"
-                >
-              </div>
-            </div>
-            <div class="container-fluid mt-5 row">
-              <ul
-                id="ladder"
-                class="ladder justify-content-center align-items-center"
-                aria-label="Progress Bar"
-              >
-                <!-- Ladder items will be filled dynamically -->
-              </ul>
-            </div>
-          </div>
-        </div>
+    <div class="text-center mt-5 mb-5">
+      <div class="mb-5">
+        <h1>Welcome to the Quiz App!</h1>
       </div>
-    </div>
+      <div>
+        <img
+          src="assets/images/KBC.png"
+          class="mainImage"
+          alt="Game Image"
+          height="30%"
+          width="30%"
+        />
+      </div>
 
-    <!--Modal itself-->
-    <div class="modal" id="modal">
-      <div class="modal-header">
-        <div class="title">Game Rules</div>
-        <button class="closeButton" aria-label="Game rules close button">
-          &times;
+      <div class="mt-5 mb-5">
+        <!-- Start Game button-->
+        <button
+          id="startGameBtn"
+          type="button"
+          class="startGameBtn"
+          aria-label="Start Game button"
+        >
+          <strong>
+            <h5>Start Quiz</h5>
+          </strong>
+        </button>
+
+        <!--modal Rules button-->
+        <button
+          id="rulesBtn"
+          type="button"
+          class="rulesBtn"
+          aria-label="Game rules button"
+        >
+          <h5>Rules</h5>
         </button>
       </div>
-      <div class="modal-body">
-        <h6>
-          Welcome to the quiz game. This game is inspired from "Who Wants to be
-          a Millionaire" quiz show.
-        </h6>
-        <p>
-          There are 12 questions in the quiz. You need to answer all 12
-          questions correct to win £1,000,000. For each question 4 answers are
-          given. Click on any answer to select them. There is progress bar is
-          shown in the right which will show your winning amount. With each
-          right answer your winning amount will move up.
-        </p>
-        <p>
-          Correct and wrong answer sound has been added to enhance user
-          experience. You can press that sound button to toggle on/off sound.
-        </p>
-        <p>
-          There are life lines called <strong>"50-50"</strong> and
-          <strong>Audiance Poll </strong> are provided to help you with the
-          answers. You can use lifelines only once.
-          <strong>"50-50"</strong> will remove two incorrect answers and you
-          will have only two options to select from including the right one.
-          <strong>Audiance Poll </strong> will highlight the right only option.
-        </p>
-        <p>
-          Once you give the wrong answer you will be out of the game with your
-          winning amount.
-        </p>
-        <p>
-          All the best to play the game. Hope you win the £1,000,000 and become
-          Millionaire!!
-        </p>
+
+      <!--Modal itself-->
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="title">Game Rules</div>
+          <button class="closeButton" aria-label="Game rules close button">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>
+            Welcome to the quiz game. This game is inspired from "Who Wants to
+            be a Millionaire" quiz show.
+          </h6>
+          <p>
+            There are 12 questions in the quiz. You need to answer all 12
+            questions correct to win £1,000,000. For each question 4 answers are
+            given. Click on any answer to select them. There is progress bar is
+            shown in the right which will show your winning amount. With each
+            right answer your winning amount will move up.
+          </p>
+          <p>
+            Correct and wrong answer sound has been added to enhance user
+            experience. You can press that sound button to toggle on/off sound.
+          </p>
+          <p>
+            There are life lines called <strong>"50-50"</strong> and
+            <strong>Audiance Poll </strong> are provided to help you with the
+            answers. You can use lifelines only once.
+            <strong>"50-50"</strong> will remove two incorrect answers and you
+            will have only two options to select from including the right one.
+            <strong>Audiance Poll </strong> will highlight the right only
+            option.
+          </p>
+          <p>
+            Once you give the wrong answer you will be out of the game with your
+            winning amount.
+          </p>
+          <p>
+            All the best to play the game. Hope you win the £1,000,000 and
+            become Millionaire!!
+          </p>
+        </div>
       </div>
+      <div id="overlay"></div>
     </div>
-    <div id="overlay"></div>
-    <!--Fontawesome script-->
-    <script
-      src="https://kit.fontawesome.com/d0964af309.js"
-      crossorigin="anonymous"
-    ></script>
     <!--Javascript-->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" defer></script>
   </body>
 </html>

@@ -38,7 +38,9 @@ html {
 #toggleSoundBtn,
 #cancelBtn,
 #restartBtn,
-#playAgainBtn
+#homeBtn,
+#startGameBtn,
+#returnBtn404
 {
   font-size: 15px;
   text-align: center;
@@ -49,13 +51,18 @@ html {
   border-radius: 10px;
   background: var(--col1);
   color: white;
+  gap:20px;
 }
+
 
 #rulesBtn:hover,
 #toggleSoundBtn:hover,
 #cancelBtn:hover,
 #restartBtn:hover,
-#playAgainBtn:hover {
+#homeBtn:hover,
+#startGameBtn:hover,
+#returnBtn404
+  {
   background-color: white;
   color: var(--col1);
   border: 1px solid var(--col1);
@@ -168,6 +175,13 @@ button:disabled {
   opacity: 0.8;
 }
 
+.mainImage{
+  border-radius: 100%; /* Always round */
+  object-fit: cover; /* Keeps image nicely fitted */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px white;
+}
+
 .imag {
   width: 150px;
   height: 150px;
@@ -177,7 +191,8 @@ button:disabled {
   box-shadow: 0px 0px 15px white;
 }
 
- .imag:hover {
+ .imag:hover,
+ .mainImage:hover {
   box-shadow: 0px 0px 20px white;
   transform: scale(1.1);
 } 
