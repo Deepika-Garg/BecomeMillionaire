@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (startGame) {
     startGame.onclick = () => {
       window.location.href = "quiz.html";
-    }
+    };
   }});
 document.addEventListener("DOMContentLoaded", function () {
   const rulesBtn = document.getElementById("rulesBtn");

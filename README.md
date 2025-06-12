@@ -2,7 +2,15 @@
 
 [Live site](https://deepika-garg.github.io/BecomeMillionaire/index.html)
 
-![am I responsive screenshot](assets/readmeImages/responsive.png) 
+## Home Page
+![am I responsive Home Page screenshot](assets/readmeImages/amIResponsive/homeResponsiveness.png)
+
+## Quiz Page
+![am I responsive Quiz Page screenshot](assets/readmeImages/amIResponsive/quizResponsiveness.png)
+
+## 404 Page
+
+![am I responsive 404 Page screenshot](assets/readmeImages/amIResponsive/404Responsiveness.png)
 
 ## User Experience (UX)
 
@@ -101,20 +109,32 @@ Image Sources
 > - Title/logo
 ![Logo](assets/images/KBC.png)
 
+### Home Page
+
+> - Start Quiz button
+![start Quiz screenshot](assets/readmeImages/existingFeatures/homePage/startQuizBtn.png)
 
 > - Rules Explained
 Modal is used to describe the rules of the game on the click of rules button on the top of page.
 
-![Rules screenshot](assets/readmeImages/rules.png)
+![Rules screenshot](assets/readmeImages/existingFeatures/homePage/rules.png)
 
-The background and logo change colour accordingly using JS.
+### Quiz Page
+
+> - Home Button
+Home button will take you to the welcome screen page, in case anybody wants to go.
+![Home Button screenshot](assets/readmeImages/existingFeatures/quizPage/homeBtn.png)
+
+> - Rules Button 
+Same rule button is given on quiz page as well for convenience.
 
 > - Sound On/Off Button
 
 Correct answer and wrong answer sound has been added, which can be which can be toggle on and off by the user for there preference.
 
-![Sound On screenshot](assets/readmeImages/soundOn.png)
-![Sound Off screenshot](assets/readmeImages/soundOff.png)
+![Sound On screenshot](assets/readmeImages/existingFeatures/quizPage/soundImg/soundOn.png)
+
+![Sound Off screenshot](assets/readmeImages/existingFeatures/quizPage/soundImg/soundOff.png)
 
 > - Quiz questions and answers
 
@@ -122,7 +142,7 @@ Questions are pulled from the defined list of 12 sets with 3 questions in each s
 
 Answer buttons highlight when hovered over (large devices) to create positive UX.
 
-![Quiz screenshot](assets/readmeImages/quiz.png)
+![Quiz screenshot](assets/readmeImages/existingFeatures/quizPage/questionImg/quiz.png)
 
 Score/Prize Money increments with every correct answer.
 
@@ -140,36 +160,37 @@ Just after 1 second a modal appear and indicate Game End. It shows the prize mon
 
 There are 2 lifelines are provided to help player, called '50:50' and 'AudiancePoll'. These will help user to figure out the right answer and win maximum money they can. 
 
-![Lifelines screenshot](assets/readmeImages/lifeLines.png)
+![Lifelines screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/lifeLines.png)
 
 **LifeLine Fifty-Fifty**
  On click of '50:50' two actions occur.
  1. Two random wrong answers get deleted and player is left with only 2 choices to select from including the right one. It makes game easy for player.
 
- ![Removed wrong options screenshot](assets/readmeImages/quizAfter50-50Used.png)
+ ![Removed wrong options screenshot](assets/readmeImages/existingFeatures/quizPage/questionImg/quizAfter50-50Used.png)
 
 2. Button itself get faded to indicate that it is used.
 
-![Faded '50:50' screenshot](assets/readmeImages/faded50-50.png)
+![Faded '50:50' screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/faded50-50.png)
 
 **LifeLine AudiancePoll**
  On click of 'AudiancePoll' lifeline two actions occur.
  1. Right answer will get highlight with 'Green' color.
 
- ![Highlight Right option screenshot](assets/readmeImages/quizAfterAPUsed.png)
+ ![Highlight Right option screenshot](assets/readmeImages/existingFeatures/quizPage/questionImg/quizAfterAPUsed.png)
 
 2. Button itself get faded to indicate that it is used.
 
-![Faded 'AudiancePoll' screenshot](assets/readmeImages/fadedAP.png)
+![Faded 'AudiancePoll' screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/fadedAP.png)
 
 3. If you try to use any of the lifeline again during the same game. It shows a message "Lifelines can be used only once".
 
-![Lifeline alert message screenshot](assets/readmeImages/lifelineUsedAlert.png)
+![Lifeline alert message screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/lifelineUsedAlert.png)
 
 
 ## Future Features
-### Home page
-> - Ratherthan a single page application I will add a home page with welcome message and game rule and then convert this only page as a quiz page.
+
+Quiz Page
+
 > - I would like to include some sort of animation when user win £1,000,000.
 > - I want to add the third lifeline Phone a Friend like actual original game.  
 > - I would learn and add keyboard Navigation for my quiz.
@@ -224,16 +245,6 @@ Some Meta tags and aria-labels has been added to improve the testing results.
 ![Lighthouse Mobile testing screenshot](testing/LighthouseValidation/MobileLHTesting.png)
 
 
-## Bugs section
-Errors thrown by HTML Validator during Testing. All error were corrected.
-
-![HTML validator error screenshot](testing/HTMLValidator/validationFailImageHTML.png)
-
-Errors thrown by CSS Validator during Testing. All errors were corrected.
-
-![CSS validator error screenshot](testing/CSSValidation/validationFailImageCSS.png)
-
-
 ## Responsiveness Testing
 
 * The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Am I Responsive](https://ui.dev/amiresponsive?url=https://deepika-garg.github.io/BecomeMillionaire/index.html).
@@ -274,6 +285,35 @@ Google Chrome, Safari, Microsoft Edge. Appearance, functionality and responsiven
 | 404 Page - UX | Make a mistake in browser address | 404 Page should appear with the site logo and an Error message with a back to main quiz button | PASS|
 | Back to Home Page Button | Click on it | It should redirect you to home/main/quiz page with a reset quiz. | PASS|
 
+## User stories Testing
+
+| Expected outcome:| Steps                                | Result |
+|:---------------------|:-------------------------------------|-----|
+| As a user I want to be able to play a fun and engaging game.:| Engaging UX Design using sutle and contrast color, easily navigating quiz game with helplines are designed.                                | User will definitely be curious to play quiz |
+| As a user I want to test my general Knowledge about the world.:| All the questions added in the game are general knowledge questions about the world                                | User will test his knowledge in an engaging way. |
+| As a user I want to intuitively navigate the site without confusion.:| Rules button is given to popup the clear instructions to avoid any confusion                                | user can easily navigate the site. |
+| As a user I want to be able to see a running score/prize money as the game progresses.:|Clearly visible Progress bar is given on right side of screen to show the winning amt.                                | Updated score is always visible to the user |
+| As a user I want to see my final winning amount when I have completed the quiz.:| A popup comes up at the end of game to let user know their final winning amount.                               |User will always know the final amount of winning at the end of the game.So working as expected.  |
+| As a user I want to see if any help/hint available for me to complete the quiz and win as much as possible.:| Two lifelines are provided to user to help during the play                                | Both the lifelines are working as expected |
+
+ 
+### Quiz site Owner
+| Expected outcome:| Steps                                | Result |
+|:---------------------|:-------------------------------------|-----|
+|  As the site owner I want to offer a Welcome Page.| I have added a welcome page with start game button and rules button.                                | site is working as expected |
+| As the site owner I want to provide a fun and engaging quiz for the user.| On the Start Game button click on welcome page actual quiz start. Each question with four answers.                              | As Expected |
+| As the site owner I want the user to be able to replay the game multiple times.| At the end of game user is always asked to play the game again.                                | As Expected |
+| As the site owner I want to questions to appear randomly and different for the same level to make it more engaging.|I have added 12 sets of questions, Each set with 3 questions. questions selecting is done randomly                                | Pass As Expected |
+  
+  ## Bugs section
+Errors thrown by HTML Validator during Testing. All error were corrected.
+
+![HTML validator error screenshot](testing/HTMLValidator/validationFailImageHTML.png)
+
+Errors thrown by CSS Validator during Testing. All errors were corrected.
+
+![CSS validator error screenshot](testing/CSSValidation/validationFailImageCSS.png)
+
 
 ## Deployment
 
@@ -286,9 +326,22 @@ The steps to deploy the project are as follows:
 5. Select Save
 6. After couple of minutes project become live
 
-![screenshot of correct settings on Github](assets/readmeImages/deployedSiteImg.png)
+![screenshot of correct settings on Github](assets/readmeImages/deployment/deployedSiteImg.png)
 
 7. If you want your own custom domain name you would have to purchase one with an external provider and enter it in the box towards the bottom of the page above.
+
+### How to Clone
+To clone the repository:
+
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project, Deepika-Garg/BecomeMillionaire
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+![Clone screenshot](assets/readmeImages/deployment/clone.png)
+
+4. In your IDE of choice, open 'Git Bash'.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
+
 
 ## Credits
 ### Images sources:
@@ -299,7 +352,8 @@ The steps to deploy the project are as follows:
 ### Tutorials:
 > - Quiz building tutorial (https://www.youtube.com/watch?v=PBcqGxrr9g8)
 > - Quiz building tutorial (https://www.youtube.com/watch?v=TYCHpO4D50Y)
-> - javaScript tutorials w3 schools (https://www.w3schools.com/js/default.asp)
+> - JavaScript tutorials w3 schools (https://www.w3schools.com/js/default.asp)
+> - Javascript basics from codeInstitute course/tutorials given.
 
 
 ### Content and Resources:
