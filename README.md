@@ -37,7 +37,7 @@
   > - The website should keep a running total of the user's winning amount and display this to them in the progress ladder on the right.
   > - The website should let the user know whether they have selected the correct answer or not.
   > - Game should finish once user give the wrong answer. 
-  > - Every time the user give wrong answer and game finishes, they must have choice to start the game again.
+  > - Every time the user gives wrong answer and game finishes, they must have choice to start the game again.
 
 ## Structure Plane 
 ### (This is a single page game, with a welcome Page and 404 page. Messages are shown on click of buttons in form of Modal and are hidden or displayed via display: flex/none css)
@@ -54,14 +54,14 @@ Quiz page
 > - Home button will take user to Welcome page.
 > - On click of Rules button on the page a modal appears and briefly describes quiz.
 > - Different sounds has been added for the right and wrong answer and sound button can be used to toggle on/off the sound.
-> - Who wants to be a millionaire logo/image for asthetic.
+> - Who wants to be a millionaire logo/image for aesthetic.
 > - Randomly generated question with four answer buttons(with hover effect) to select from.
 > - Progress ladder/bar on the right to show the winning amount.
 > - Lifeline 50-50 to help the user for answer the questions. it will remove 2 wrong answers.
-> - Lifeline Audiance Poll will highlight the right answer in green color. 
+> - Lifeline Audience Poll will highlight the right answer in green colour. 
 
-End game Modal/PopUp
-> - PopUp will appear if the wrong answer selected to 'Start again' button to encourage user to restart the game. Exit Game button will redirect the user to Welcome Page. 
+End game Modal/Pop-up
+> - popups will appear if the wrong answer selected to 'Start again' button to encourage user to restart the game. Exit Game button will redirect the user to Welcome Page. 
 > - Modal will show your winning amount with a congratulations message.
 
 Lifeline used Modal
@@ -77,7 +77,7 @@ Lifeline used Modal
 HomePage:
 ![HomePage wireframe](assets/readmeImages/wireframes/homeWireframe.png)
 
-Quizpage:
+QuizPage:
 ![Quiz wireframes](assets/readmeImages/wireframes/quizWireframe.png)
 
 404ErrorPage:
@@ -87,7 +87,7 @@ Quizpage:
 ### Surface plane
 
 **Color**
-Very less colors are used so that quiz looks neat and tidy. [Color Adobe](https://color.adobe.com/) is used to create the color pallete. contrast of color is good. Only first two colors purple and white is used as site colors. Red and Green color is used to highlight the wrong and right answers respectively and Golden color is used to show the progress. 
+Very less colours are used so that quiz looks neat and tidy. [Color Adobe](https://color.adobe.com/) is used to create the color pallete. contrast of color is good. Only first two colors purple and white is used as site colors. Red and Green color is used to highlight the wrong and right answers respectively and Golden color is used to show the progress. 
 
 ![Colors Pallete](assets/readmeImages/colorsPallete.png)
 
@@ -95,7 +95,7 @@ Very less colors are used so that quiz looks neat and tidy. [Color Adobe](https:
 Font for the quiz is used 'Segoe UI'. Different font size is being used between question and answers to differentiate but same font.
 
 **Images:**
-In total only three images are used in the quiz. One for logo and favicon and two images of phone and audiance for two life lines respectively. 
+In total only three images are used in the quiz. One for logo and favicon and two images of phone and audience for two life lines respectively. 
 
 Image Sources  
 [WhoWantsToBeMillionaireLogo](https://img.playstationtrophies.org/images/trophies/1297/ico.png)
@@ -103,7 +103,6 @@ Image Sources
 [AudiancePoll](https://millionaire.fandom.com/wiki/Ask_the_Audience?file=ATA_2018.gif)
 
 [Fifty-Fifty](https://millionaire.fandom.com/wiki/50:50?file=50-50_2018.gif)
-
 
 ## Existing Features
 > - Title/logo
@@ -130,7 +129,7 @@ Same rule button is given on quiz page as well for convenience.
 
 > - Sound On/Off Button
 
-Correct answer and wrong answer sound has been added, which can be which can be toggle on and off by the user for there preference.
+Correct answer and wrong answer sound has been added, which can be which can be toggle on and off by the user for their preference.
 
 ![Sound On screenshot](assets/readmeImages/existingFeatures/quizPage/soundImg/soundOn.png)
 
@@ -148,21 +147,21 @@ Score/Prize Money increments with every correct answer.
 
 ![ProgressBar screenshot](assets/readmeImages/progressBar.png)
 
-After user has selected an answer, if the answer is correct then new question appear and progress bar get updated as in previous image. If the answer is wrong then selected answer get highlighted with red color and right answer with Green color. screen freeze and this is end of game.
+After user has selected an answer, if the answer is correct then new question appear and progress bar get updated as in previous image. If the answer is wrong then selected answer get highlighted with red color and right answer with green color. screen freeze and this is end of game.
 
-![wrongAnswer screenshot](assets/readmeImages/wrongAnswer.png)
+![wrong Answer screenshot](assets/readmeImages/wrongAnswer.png)
 
-Just after 1 second a modal appear and indicate Game End. It shows the prize money, congratulate the player and give option to play again.
+Just after 1 second a modal appears and indicate Game End. It shows the prize money, congratulate the player and give option to play again.
 
 ![Alert screenshot](assets/readmeImages/alertScreenshot.png)
 
 ## Lifelines
 
-There are 2 lifelines are provided to help player, called '50:50' and 'AudiancePoll'. These will help user to figure out the right answer and win maximum money they can. 
+There are 2 lifelines are provided to help player, called '50:50' and 'Audience'. These will help user to figure out the right answer and win maximum money they can. 
 
 ![Lifelines screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/lifeLines.png)
 
-**LifeLine Fifty-Fifty**
+**Lifeline Fifty-Fifty**
  On click of '50:50' two actions occur.
  1. Two random wrong answers get deleted and player is left with only 2 choices to select from including the right one. It makes game easy for player.
 
@@ -172,20 +171,19 @@ There are 2 lifelines are provided to help player, called '50:50' and 'AudianceP
 
 ![Faded '50:50' screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/faded50-50.png)
 
-**LifeLine AudiancePoll**
- On click of 'AudiancePoll' lifeline two actions occur.
+**Lifeline AudiencePoll**
+ On click of 'AudiencePoll' lifeline two actions occur.
  1. Right answer will get highlight with 'Green' color.
 
  ![Highlight Right option screenshot](assets/readmeImages/existingFeatures/quizPage/questionImg/quizAfterAPUsed.png)
 
 2. Button itself get faded to indicate that it is used.
 
-![Faded 'AudiancePoll' screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/fadedAP.png)
+![Faded 'AudiencePoll' screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/fadedAP.png)
 
 3. If you try to use any of the lifeline again during the same game. It shows a message "Lifelines can be used only once".
 
 ![Lifeline alert message screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/lifelineUsedAlert.png)
-
 
 ## Future Features
 
@@ -199,26 +197,24 @@ Quiz Page
 
 > - HTML5
 > - CSS3
-> - Javascript
+> - JavaScript
 
 ## Technologies used
 > - Bootstrap: I used [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/) to help build my site in a responsive layout. 
 > - Google Fonts: The font 'Segoe UI' was used for the main body of the site. 
 > - Font Awesome: was used to import sound on/off icons for the sound button. 
 > - Git: I used VSCode as a code space to create the site from which I pushed my site to Github for deployment.
-> - GitHub: I used GitHub as the respository for the projects code after being pushed from VSCode.
+> - GitHub: I used GitHub as the repository for the projects code after being pushed from VSCode.
 > - Balsamiq: I used Balsamiq to create wireframes to outline to design of the site.
 > - Color Adobe: I used color Adobe to generate a colour palette.
 
 ## Testing
-
 
 ## HTML validator:
 
 Errors has been corrected and following is the screenshot provided.
 
 ![HTML validator Pass screenshot](testing/HTMLValidator/validationPassImageHTML.png)
-
 
 ## CSS validator:
 
@@ -228,7 +224,7 @@ Errors has been corrected and following is the screenshot provided.
 
 ## JavaScript validator:
 
-![javaScript validator screenshot](testing/JavascriptValidation/JSHintTest.png)
+![JavaScript validator screenshot](testing/JavascriptValidation/JSHintTest.png)
 
 Note: Functions shown unused in the Validator image are the function which are called in HTML file on onclick() event of corresponding buttons.
 
@@ -240,10 +236,8 @@ Note: Functions shown unused in the Validator image are the function which are c
 Some Meta tags and aria-labels has been added to improve the testing results.
 ![Lighthouse Desktop testing after correction screenshot](testing/LighthouseValidation/DesktopLHTestingAfterCorrection.png)
 
-
 **Testing for Mobile Device**
 ![Lighthouse Mobile testing screenshot](testing/LighthouseValidation/MobileLHTesting.png)
-
 
 ## Responsiveness Testing
 
@@ -272,13 +266,13 @@ Google Chrome, Safari, Microsoft Edge. Appearance, functionality and responsiven
 | Questions | Play quiz multiple time. | Questions should be randomly generated out of set of 3 questions for same level/prize money. | PASS |
 | Answer buttons | Hover mouse over buttons/Tap on mobile device. | Buttons should highlight when hovered and select the answer when clicked. | PASS |
 | Answer buttons |Select the correct answer | 1. Button should highlight with 'Green' color. 2. In the progress bar on the right winning amount should be green and next question amount should be golden color. 3. Next question should appear randomly on the screen from set of 3 questions.  | PASS |
-| Answer buttons | Select the wrong answer | Buttons should highlight with 'Red' color and correct answer should highlight with 'Green' color. PopUp should appear to warn that game is over and 'Start Again' button. | PASS |
+| Answer buttons | Select the wrong answer | Buttons should highlight with 'Red' color and correct answer should highlight with 'Green' color. pop-up should appear to warn that game is over and 'Start Again' button. | PASS |
 | Quiz/Home page - UX | Read through every question. | Text should all be clear and easily readable and the questions make sense. | PASS|
-|Progress Bar/Ladder - score/PrizeMoney counter | Play quiz whole way through on each level. | Score should incrememnt by 1 step up for every correct answer. Current Question should be highlighted with golden color and score for completed questions should be highlighted with green color. | PASS |
-| Fifty-Fifty Lifeline | Click on it. | Two wrong answers should disappear randomly. Now you should be left with only two answer options including correct one. Lifeline's visibility should be degraded immidiately to indicate that it has been used.| PASS |
+|Progress Bar/Ladder - score/Prizemoney counter | Play quiz whole way through on each level. | Score should increment by 1 step up for every correct answer. Current Question should be highlighted with golden color and score for completed questions should be highlighted with green color. | PASS |
+| Fifty-Fifty Lifeline | Click on it. | Two wrong answers should disappear randomly. Now you should be left with only two answer options including correct one. Lifeline's visibility should be degraded immediately to indicate that it has been used.| PASS |
 | Fifty-Fifty Lifeline | Click on it again during the same game. | Alert message should appear to warn Lifelines can be used only once. No answer option is removed this time.| PASS |
-| Audiance Poll Lifeline | Click on it. | Right answer should be highlighted with Green Color. Lifeline's visibility should be degraded immidiately to indicate that it has been used.| PASS |
-| Audiance Poll Lifeline | Click on it again during the same game. | Alert message should appear to warn Lifelines can be used only once. No answer option is highlighted green this time.| PASS |
+| Audience Poll Lifeline | Click on it. | Right answer should be highlighted with Green Color. Lifeline's visibility should be degraded immediately to indicate that it has been used.| PASS |
+| Audience Poll Lifeline | Click on it again during the same game. | Alert message should appear to warn Lifelines can be used only once. No answer option is highlighted green this time.| PASS |
 | End game - finish message | Complete quiz or select wrong answer | End game message should alter based on winning amount. Text should be clear and legible. | PASS |
 | End game  - Start again button | Click button | Quiz should reset back to the beginning | PASS| 
 | Responsiveness - UX | Resize site for all device sizes. | Check that images/text/other elements resize as expected, text should be readable and elements should all be visible and not overlap randomly. | PASS|
@@ -289,11 +283,11 @@ Google Chrome, Safari, Microsoft Edge. Appearance, functionality and responsiven
 
 | Expected outcome:| Steps                                | Result |
 |:---------------------|:-------------------------------------|-----|
-| As a user I want to be able to play a fun and engaging game.:| Engaging UX Design using sutle and contrast color, easily navigating quiz game with helplines are designed.                                | User will definitely be curious to play quiz |
+| As a user I want to be able to play a fun and engaging game.:| Engaging UX Design using subtle and contrast color, easily navigating quiz game with helplines are designed.                                | User will definitely be curious to play quiz |
 | As a user I want to test my general Knowledge about the world.:| All the questions added in the game are general knowledge questions about the world                                | User will test his knowledge in an engaging way. |
 | As a user I want to intuitively navigate the site without confusion.:| Rules button is given to popup the clear instructions to avoid any confusion                                | user can easily navigate the site. |
 | As a user I want to be able to see a running score/prize money as the game progresses.:|Clearly visible Progress bar is given on right side of screen to show the winning amt.                                | Updated score is always visible to the user |
-| As a user I want to see my final winning amount when I have completed the quiz.:| A popup comes up at the end of game to let user know their final winning amount.                               |User will always know the final amount of winning at the end of the game.So working as expected.  |
+| As a user I want to see my final winning amount when I have completed the quiz.:| A popup comes up at the end of game to let user know their final winning amount.                               |User will always know the final amount of winning at the end of the game. So, working as expected.  |
 | As a user I want to see if any help/hint available for me to complete the quiz and win as much as possible.:| Two lifelines are provided to user to help during the play                                | Both the lifelines are working as expected |
 
  
@@ -303,7 +297,7 @@ Google Chrome, Safari, Microsoft Edge. Appearance, functionality and responsiven
 |  As the site owner I want to offer a Welcome Page.| I have added a welcome page with start game button and rules button.                                | site is working as expected |
 | As the site owner I want to provide a fun and engaging quiz for the user.| On the Start Game button click on welcome page actual quiz start. Each question with four answers.                              | As Expected |
 | As the site owner I want the user to be able to replay the game multiple times.| At the end of game user is always asked to play the game again.                                | As Expected |
-| As the site owner I want to questions to appear randomly and different for the same level to make it more engaging.|I have added 12 sets of questions, Each set with 3 questions. questions selecting is done randomly                                | Pass As Expected |
+| As the site owner I want to questions to appear randomly and different for the same level to make it more engaging.|I have added 12 sets of questions, Each set with 3 questions. questions selecting is done randomly                                | Pass as Expected |
   
   ## Bugs section
 Errors thrown by HTML Validator during Testing. All error were corrected.
@@ -314,14 +308,13 @@ Errors thrown by CSS Validator during Testing. All errors were corrected.
 
 ![CSS validator error screenshot](testing/CSSValidation/validationFailImageCSS.png)
 
-
 ## Deployment
 
 The steps to deploy the project are as follows:
 
 1. Click on Settings on the navigation menu in the repository
 2. Selected the Pages menu on the left side bar.
-3. In the first dropdown menu labeled Source select the branch of the name 'main' from the dropdown.
+3. In the first dropdown menu labelled Source select the branch of the name 'main' from the dropdown.
 4. In the next dropdown menu select '/root' as the default option.
 5. Select Save
 6. After couple of minutes project become live
@@ -342,7 +335,6 @@ To clone the repository:
 5. Change the current working directory to the location where you want the cloned directory to be made.
 6. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
-
 ## Credits
 ### Images sources:
 > - [WhoWantsToBeMillionaireLogo](https://img.playstationtrophies.org/images/trophies/1297/ico.png)
@@ -353,22 +345,22 @@ To clone the repository:
 > - Quiz building tutorial (https://www.youtube.com/watch?v=PBcqGxrr9g8)
 > - Quiz building tutorial (https://www.youtube.com/watch?v=TYCHpO4D50Y)
 > - JavaScript tutorials w3 schools (https://www.w3schools.com/js/default.asp)
-> - Javascript basics from codeInstitute course/tutorials given.
-
+> - JavaScript basics from code Institute course/tutorials given.
 
 ### Content and Resources:
 > - Fonts sourced from Google Fonts: (https://fonts.google.com/selection/embed)
 > - Am I responsive screenshots for Readme: (https://ui.dev/amiresponsive)
-> - Markdown cheatsheet: (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+> - Markdown cheat sheet: (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 > - Favicon: (https://favicon.io/emoji-favicons/)
 
 #### Acknowledgments: 
-I would like to thank following people for the help and advise they have given me in this project.
+I would like to thank following people for the help and advice they have given me in this project.
 
-* My mentor Precious Ijege for his guidence and feedback throughout this milestone project.
+* My mentor Precious Ijege for his guidance and feedback throughout this milestone project.
 * Marco Tot our class cohort facilitator for his constant assistance and encouragement.
 * Slack Community for their endless support.
 * Code institute for the outstanding course documentation and for providing opportunity to learn and develop this project.
+
 
 
 
