@@ -2,15 +2,51 @@
 
 [Live site](https://deepika-garg.github.io/BecomeMillionaire/index.html)
 
-## Home Page
-![am I responsive Home Page screenshot](assets/readmeImages/amIResponsive/homeResponsiveness.png)
+![Who wants to be Millionaire Responsive image](assets/readmeImages/amIResponsive/siteResponsiveness.png)
 
-## Quiz Page
-![am I responsive Quiz Page screenshot](assets/readmeImages/amIResponsive/quizResponsiveness.png)
+## Table of content
 
-## 404 Page
+ 1. [Planning](#Planning)
+    * [Target Audiences](#Target-Audiences)
+    * [User Stories](#User-Stories)   
+    * [Structure Plane](#structure-plane)
+ 2. [Design](#Design)
+      * [Wireframes](#Wireframes)
+      * [ColourScheme](#Colour-scheme)
+      * [Typography](#Typography)
+      * [Imagery](#imagery)   
+ 3. [Existing Features](#Existing-Features)
+    * [Favicon](#Favicon)
+    * [Home Page](#Home-Page-feature)
+    * [Quiz Page](#Quiz-Page-feature)
+      * [Home Button](#home-button)
+      * [Quiz](#quiz)
+      * [Progres Bar](#progress-bar)
+      *[Lifelines](#lifelines)
+    * [404 Page](#404-page-feature)
+ 4. [Future Features](#Future-Features)
+ 5. [Technologies Used](#Technologies-Used)
+    * [Languages](#Languages)
+    * [Technology](#Technology)
+ 6. [Final Design](#Final-Design)
+ 7. [Deployment](#Deployment)
+ 8. [Testing](#Testing)
+ 9. [Credit](#Credit)
+      * [Image Source](#images-sources)
+      * [Tutorials](#tutorials)
+      * [Content and Resources](#content-and-resources)
+      * [Acknowledgments / Thank You's](#Acknowledgments/thanksyou's)
+ 
+## Planning
 
-![am I responsive 404 Page screenshot](assets/readmeImages/amIResponsive/404Responsiveness.png)
+Become Millionaire game app is design is influenced by actual famous game "Who wants to be a Millionaire". Same concept and theme is being try to recreate but with some convenient steps. Game has questions and four answer options, two lifelines and a progress ladder to highlight the winning score. Rules button and some message will be shown on screen when require. Some visual hover effects and sounds have been added to make the game more engaging and interesting. Questions are based on general knowledge so any one can play it and enjoy it.
+
+[Back to top](#Table-of-content)
+
+## Target Audiences
+Actual plan was created a JavaScript question game but later on it was changed to general questions so that anyone can play and enjoy the game. Winning money factor has been added to motivate the user to play and win more money. 
+
+[Back to top](#Table-of-content)
 
 ## User Experience (UX)
 
@@ -38,6 +74,8 @@
   > - The website should let the user know whether they have selected the correct answer or not.
   > - Game should finish once user give the wrong answer. 
   > - Every time the user gives wrong answer and game finishes, they must have choice to start the game again.
+
+  [Back to top](#Table-of-content)
 
 ## Structure Plane 
 ### (This is a single page game, with a welcome Page and 404 page. Messages are shown on click of buttons in form of Modal and are hidden or displayed via display: flex/none css)
@@ -72,6 +110,8 @@ Lifeline used Modal
 > - Error Message.
 > - Return to home button to go back to the Welcome Page/Home Page 
 
+[Back to top](#Table-of-content)
+
 ### Wireframes:
 
 HomePage:
@@ -82,19 +122,25 @@ QuizPage:
 
 404ErrorPage:
 ![404 wireframes](assets/readmeImages/wireframes/404Wirframe.png)
+
+[Back to top](#Table-of-content)
  
 
 ### Surface plane
 
-**Color**
+### Colour Scheme
 Very less colours are used so that quiz looks neat and tidy. [Color Adobe](https://color.adobe.com/) is used to create the color pallete. contrast of color is good. Only first two colors purple and white is used as site colors. Red and Green color is used to highlight the wrong and right answers respectively and Golden color is used to show the progress. 
 
 ![Colors Pallete](assets/readmeImages/colorsPallete.png)
 
-**Font:**
+[Back to top](#Table-of-content)
+
+### Typography
 Font for the quiz is used 'Segoe UI'. Different font size is being used between question and answers to differentiate but same font.
 
-**Images:**
+[Back to top](#Table-of-content)
+
+### Imagery
 In total only three images are used in the quiz. One for logo and favicon and two images of phone and audience for two life lines respectively. 
 
 Image Sources  
@@ -104,11 +150,15 @@ Image Sources
 
 [Fifty-Fifty](https://millionaire.fandom.com/wiki/50:50?file=50-50_2018.gif)
 
+[Back to top](#Table-of-content)
+
 ## Existing Features
+
+### Favicon
 > - Title/logo
 ![Logo](assets/images/KBC.png)
 
-### Home Page
+### Home Page Feature
 
 > - Start Quiz button
 ![start Quiz screenshot](assets/readmeImages/existingFeatures/homePage/startQuizBtn.png)
@@ -118,8 +168,9 @@ Modal is used to describe the rules of the game on the click of rules button on 
 
 ![Rules screenshot](assets/readmeImages/existingFeatures/homePage/rules.png)
 
-### Quiz Page
+### Quiz Page Feature
 
+#### Home Button
 > - Home Button
 Home button will take you to the welcome screen page, in case anybody wants to go.
 ![Home Button screenshot](assets/readmeImages/existingFeatures/quizPage/homeBtn.png)
@@ -127,6 +178,7 @@ Home button will take you to the welcome screen page, in case anybody wants to g
 > - Rules Button 
 Same rule button is given on quiz page as well for convenience.
 
+#### Sound/Audio
 > - Sound On/Off Button
 
 Correct answer and wrong answer sound has been added, which can be which can be toggle on and off by the user for their preference.
@@ -135,6 +187,7 @@ Correct answer and wrong answer sound has been added, which can be which can be 
 
 ![Sound Off screenshot](assets/readmeImages/existingFeatures/quizPage/soundImg/soundOff.png)
 
+#### Quiz
 > - Quiz questions and answers
 
 Questions are pulled from the defined list of 12 sets with 3 questions in each set.
@@ -143,6 +196,10 @@ Answer buttons highlight when hovered over (large devices) to create positive UX
 
 ![Quiz screenshot](assets/readmeImages/existingFeatures/quizPage/questionImg/quiz.png)
 
+[Back to top](#Table-of-content)
+
+
+#### Progress Bar
 Score/Prize Money increments with every correct answer.
 
 ![ProgressBar screenshot](assets/readmeImages/progressBar.png)
@@ -155,7 +212,9 @@ Just after 1 second a modal appears and indicate Game End. It shows the prize mo
 
 ![Alert screenshot](assets/readmeImages/alertScreenshot.png)
 
-## Lifelines
+[Back to top](#Table-of-content)
+
+#### Lifelines
 
 There are 2 lifelines are provided to help player, called '50:50' and 'Audience'. These will help user to figure out the right answer and win maximum money they can. 
 
@@ -185,6 +244,13 @@ There are 2 lifelines are provided to help player, called '50:50' and 'Audience'
 
 ![Lifeline alert message screenshot](assets/readmeImages/existingFeatures/quizPage/lifeLinesImg/lifelineUsedAlert.png)
 
+## 404 Page features
+> - Logo
+> - OOps... Message
+> - Return to home button
+
+[Back to top](#Table-of-content)
+
 ## Future Features
 
 Quiz Page
@@ -199,114 +265,46 @@ Quiz Page
 > - CSS3
 > - JavaScript
 
-## Technologies used
-> - Bootstrap: I used [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/) to help build my site in a responsive layout. 
-> - Google Fonts: The font 'Segoe UI' was used for the main body of the site. 
-> - Font Awesome: was used to import sound on/off icons for the sound button. 
-> - Git: I used VSCode as a code space to create the site from which I pushed my site to Github for deployment.
-> - GitHub: I used GitHub as the repository for the projects code after being pushed from VSCode.
-> - Balsamiq: I used Balsamiq to create wireframes to outline to design of the site.
-> - Color Adobe: I used color Adobe to generate a colour palette.
+###  Technology 
 
-## Testing
+[Balsamiq](https://balsamiq.com/) - Used to create wireframes.
 
-## HTML validator:
+[Github](https://github.com/) - To save and store the files for the website.
 
-Errors has been corrected and following is the screenshot provided.
+[Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
 
-![HTML validator Pass screenshot](testing/HTMLValidator/validationPassImageHTML.png)
+[Font Awesome](https://fontawesome.com/) - For the iconography on the website.
 
-## CSS validator:
+[Bootstrap Version 5](https://getbootstrap.com/) - The framework for the website. Code for the navigation bar, carousel, cards and form were used and modified. Additional CSS styling was also implemented in style.css.
 
-Errors has been corrected and following is the screenshot provided.
+[Favicon.io](https://favicon.io/) To create favicon.
 
-![CSS validator error screenshot](testing/CSSValidation/validationPassImageCSS.png)
+[Color Adobe](https://color.adobe.com/)  To create the color pallete
 
-## JavaScript validator:
+[Convertio](https://convertio.co/) - To covert MP4 sound to MP3 sound. 
 
-![JavaScript validator screenshot](testing/JavascriptValidation/JSHintTest.png)
+[Am I Responsive?](https://ui.dev/amiresponsive) To show the website image on a range of devices.
 
-Note: Functions shown unused in the Validator image are the function which are called in HTML file on onclick() event of corresponding buttons.
+[Webaim](https://wave.webaim.org/) To test accesibility of the deployed website.
 
-## Lighthouse Testing
+Google Dev Tools - To troubleshoot and test features, solve issues with responsiveness and styling.
+Visual Studio Code is used as an editor to write code.
 
-**Testing for Desktop**
-![Lighthouse Desktop testing screenshot](testing/LighthouseValidation/DesktopLHTestingBeforeCorrection.png)
+[Back to top](#Table-of-content)
 
-Some Meta tags and aria-labels has been added to improve the testing results.
-![Lighthouse Desktop testing after correction screenshot](testing/LighthouseValidation/DesktopLHTestingAfterCorrection.png)
+## Final Design
 
-**Testing for Mobile Device**
-![Lighthouse Mobile testing screenshot](testing/LighthouseValidation/MobileLHTesting.png)
+## Home Page
+![am I responsive Home Page screenshot](assets/readmeImages/amIResponsive/homeResponsiveness.png)
 
-## Responsiveness Testing
+## Quiz Page
+![am I responsive Quiz Page screenshot](assets/readmeImages/amIResponsive/quizResponsiveness.png)
 
-* The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Am I Responsive](https://ui.dev/amiresponsive?url=https://deepika-garg.github.io/BecomeMillionaire/index.html).
+## 404 Page
 
-|        | Galaxy S5 | iPhone 13| iPad | iPhone 15 pro| Laptop <1200px | 
-|--------|-----------|----------|------|--------------|----------------|
-| Render | pass      | pass     | pass | pass         | pass           |
-| Images | pass      | pass     | pass | pass         | pass           |
-| Links  | pass      | pass     | pass | pass         | pass           |
+![am I responsive 404 Page screenshot](assets/readmeImages/amIResponsive/404Responsiveness.png)
 
-## Browser Compatibility
-
-Become Millionaire App was tested on the following browsers with no visible issues for the user. 
-Google Chrome, Safari, Microsoft Edge. Appearance, functionality and responsiveness were consistent throughout for a range of device sizes.
-
-## Manual Testing
-### User testing
-| Feature being tested:| Steps                                | Expected outcome  | Pass/Fail |
-|:---------------------|:-------------------------------------|:------------------|-----|
-| Rules button - Logo | Click of Rules button. | A popup should appear with all the game rules.           | PASS |
-| Rules Popup/Modal | click on X/close button or click on anywhere on the screen other than popup.                                 | Popup should disappear.  | PASS |
-| Sound button | click the sound button | Sound of correct answer and wrong answer should be toggle on/off | PASS |
-| Game Logo | Hover on the game logo | Logo should be bigger in size by 10% | PASS |
-| Question's font size | Test on smaller screen size | It's font size should be smaller on small screen. | PASS |
-| Questions | Play quiz multiple time. | Questions should be randomly generated out of set of 3 questions for same level/prize money. | PASS |
-| Answer buttons | Hover mouse over buttons/Tap on mobile device. | Buttons should highlight when hovered and select the answer when clicked. | PASS |
-| Answer buttons |Select the correct answer | 1. Button should highlight with 'Green' color. 2. In the progress bar on the right winning amount should be green and next question amount should be golden color. 3. Next question should appear randomly on the screen from set of 3 questions.  | PASS |
-| Answer buttons | Select the wrong answer | Buttons should highlight with 'Red' color and correct answer should highlight with 'Green' color. pop-up should appear to warn that game is over and 'Start Again' button. | PASS |
-| Quiz/Home page - UX | Read through every question. | Text should all be clear and easily readable and the questions make sense. | PASS|
-|Progress Bar/Ladder - score/Prizemoney counter | Play quiz whole way through on each level. | Score should increment by 1 step up for every correct answer. Current Question should be highlighted with golden color and score for completed questions should be highlighted with green color. | PASS |
-| Fifty-Fifty Lifeline | Click on it. | Two wrong answers should disappear randomly. Now you should be left with only two answer options including correct one. Lifeline's visibility should be degraded immediately to indicate that it has been used.| PASS |
-| Fifty-Fifty Lifeline | Click on it again during the same game. | Alert message should appear to warn Lifelines can be used only once. No answer option is removed this time.| PASS |
-| Audience Poll Lifeline | Click on it. | Right answer should be highlighted with Green Color. Lifeline's visibility should be degraded immediately to indicate that it has been used.| PASS |
-| Audience Poll Lifeline | Click on it again during the same game. | Alert message should appear to warn Lifelines can be used only once. No answer option is highlighted green this time.| PASS |
-| End game - finish message | Complete quiz or select wrong answer | End game message should alter based on winning amount. Text should be clear and legible. | PASS |
-| End game  - Start again button | Click button | Quiz should reset back to the beginning | PASS| 
-| Responsiveness - UX | Resize site for all device sizes. | Check that images/text/other elements resize as expected, text should be readable and elements should all be visible and not overlap randomly. | PASS|
-| 404 Page - UX | Make a mistake in browser address | 404 Page should appear with the site logo and an Error message with a back to main quiz button | PASS|
-| Back to Home Page Button | Click on it | It should redirect you to home/main/quiz page with a reset quiz. | PASS|
-
-## User stories Testing
-
-| Expected outcome:| Steps                                | Result |
-|:---------------------|:-------------------------------------|-----|
-| As a user I want to be able to play a fun and engaging game.:| Engaging UX Design using subtle and contrast color, easily navigating quiz game with helplines are designed.                                | User will definitely be curious to play quiz |
-| As a user I want to test my general Knowledge about the world.:| All the questions added in the game are general knowledge questions about the world                                | User will test his knowledge in an engaging way. |
-| As a user I want to intuitively navigate the site without confusion.:| Rules button is given to popup the clear instructions to avoid any confusion                                | user can easily navigate the site. |
-| As a user I want to be able to see a running score/prize money as the game progresses.:|Clearly visible Progress bar is given on right side of screen to show the winning amt.                                | Updated score is always visible to the user |
-| As a user I want to see my final winning amount when I have completed the quiz.:| A popup comes up at the end of game to let user know their final winning amount.                               |User will always know the final amount of winning at the end of the game. So, working as expected.  |
-| As a user I want to see if any help/hint available for me to complete the quiz and win as much as possible.:| Two lifelines are provided to user to help during the play                                | Both the lifelines are working as expected |
-
- 
-### Quiz site Owner
-| Expected outcome:| Steps                                | Result |
-|:---------------------|:-------------------------------------|-----|
-|  As the site owner I want to offer a Welcome Page.| I have added a welcome page with start game button and rules button.                                | site is working as expected |
-| As the site owner I want to provide a fun and engaging quiz for the user.| On the Start Game button click on welcome page actual quiz start. Each question with four answers.                              | As Expected |
-| As the site owner I want the user to be able to replay the game multiple times.| At the end of game user is always asked to play the game again.                                | As Expected |
-| As the site owner I want to questions to appear randomly and different for the same level to make it more engaging.|I have added 12 sets of questions, Each set with 3 questions. questions selecting is done randomly                                | Pass as Expected |
-  
-  ## Bugs section
-Errors thrown by HTML Validator during Testing. All error were corrected.
-
-![HTML validator error screenshot](testing/HTMLValidator/validationFailImageHTML.png)
-
-Errors thrown by CSS Validator during Testing. All errors were corrected.
-
-![CSS validator error screenshot](testing/CSSValidation/validationFailImageCSS.png)
+[Back to top](#Table-of-content)
 
 ## Deployment
 
@@ -323,7 +321,7 @@ The steps to deploy the project are as follows:
 
 7. If you want your own custom domain name you would have to purchase one with an external provider and enter it in the box towards the bottom of the page above.
 
-### How to Clone
+## How to Clone
 To clone the repository:
 
 1. Log in (or sign up) to GitHub.
@@ -335,11 +333,24 @@ To clone the repository:
 5. Change the current working directory to the location where you want the cloned directory to be made.
 6. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
+[Back to top](#Table-of-content)
+
+## Testing
+
+I tested my site throughout the entire build. I have gone through each page using google chrome developer tools to ensure that each page is responsive on different screen sizes and devices and troubleshoot any issues mentioned in console as I went along. 
+
+Please refer to [Test Document](TESTING.md) for all information to test BecomeMillionaire quiz app.
+
+[Back to top](#Table-of-content)
+
+
 ## Credits
 ### Images sources:
 > - [WhoWantsToBeMillionaireLogo](https://img.playstationtrophies.org/images/trophies/1297/ico.png)
-> - [AudiancePoll](https://millionaire.fandom.com/wiki/Ask_the_Audience?file=ATA_2018.gif)
+> - [AudiencePoll](https://millionaire.fandom.com/wiki/Ask_the_Audience?file=ATA_2018.gif)
 > - [Fifty-Fifty](https://millionaire.fandom.com/wiki/50:50?file=50-50_2018.gif)
+
+[Back to top](#Table-of-content)
 
 ### Tutorials:
 > - Quiz building tutorial (https://www.youtube.com/watch?v=PBcqGxrr9g8)
@@ -347,11 +358,15 @@ To clone the repository:
 > - JavaScript tutorials w3 schools (https://www.w3schools.com/js/default.asp)
 > - JavaScript basics from code Institute course/tutorials given.
 
+[Back to top](#Table-of-content)
+
 ### Content and Resources:
 > - Fonts sourced from Google Fonts: (https://fonts.google.com/selection/embed)
 > - Am I responsive screenshots for Readme: (https://ui.dev/amiresponsive)
 > - Markdown cheat sheet: (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 > - Favicon: (https://favicon.io/emoji-favicons/)
+
+[Back to top](#Table-of-content)
 
 #### Acknowledgments: 
 I would like to thank following people for the help and advice they have given me in this project.
@@ -360,6 +375,8 @@ I would like to thank following people for the help and advice they have given m
 * Marco Tot our class cohort facilitator for his constant assistance and encouragement.
 * Slack Community for their endless support.
 * Code institute for the outstanding course documentation and for providing opportunity to learn and develop this project.
+
+[Back to top](#Table-of-content)
 
 
 
