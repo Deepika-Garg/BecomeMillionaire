@@ -135,10 +135,13 @@ Become Millionaire App was tested on the following browsers with no visible issu
 Google Chrome, Safari, Microsoft Edge. Appearance, functionality and responsiveness were consistent throughout for a range of device sizes.
 
 ## WebAIM 
-All the pages are checked and found no errors. few alerts were detected though, which i read about and will improve in my next project. ![WebAim] (#https://wave.webaim.org/)
+All the pages are checked and found no errors. Few alerts were detected though, which I  will improve in my next project. [WebAim] (https://wave.webaim.org/)
 
 * [Back to top](#Testing)
 * Back to [Readme](./README.md#testing)
+
+## Note on originality of code
+fuctionality of function called setQueAndAns(queSet) is mostly inspired from [tutorial]( https://www.youtube.com/watch?v=TYCHpO4D50Y). 
 
 
 

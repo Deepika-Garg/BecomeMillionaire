@@ -464,7 +464,7 @@ const wrongSound = new Audio("assets/sounds/wrong_answer.mp3");
 correctSound.preload='auto';
 wrongSound.preload='auto';
 
-
+//not completely but most of code of this function and question sets above are inspired from the tutorial mentioned in readme document.
 //set random question and their answer from the given set to show on screen
 function setQueAndAns(queSet) {
   let random = Math.floor(Math.random() * queSet.length);
@@ -600,7 +600,7 @@ function fiftyFifty() {
   }
 }
 
-//functionality for audiance poll button/Image
+//functionality for audience poll button/Image
 let isAPLifeLineUsed = false;
 const imageAP = document.getElementById("audiancePollImg");
 function audiancePoll() {
